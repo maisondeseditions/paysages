@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-
+    <div id="pepwrapper">
     <div class="pep" id="pep">
     <?php 
       $pageimages = page('paysages/images')->children()->visible();
@@ -41,6 +41,6 @@
 
     </div>
 
-  
+  </div>
 
 <?php snippet('footer') ?>

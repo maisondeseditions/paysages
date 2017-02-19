@@ -33,6 +33,15 @@ body.locked {
 }
 
 /* ------------------------------ draggable /scrollable */
+#pepwrapper{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} 
+
 .pep { 
     width: 1000px;
     height: 1000px;
