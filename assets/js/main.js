@@ -39,6 +39,9 @@
             $nav.height(bodyHeight);
             $home.height(bodyHeight);
             $home.width(bodyWidth);
+
+            $body.height(bodyHeight);
+            $body.width(bodyWidth);
             $slide.height(bodyHeight);
         };
 
