@@ -156,7 +156,7 @@
         }
     })
 
-    $article.on('tap click', function(e) {
+    $pep.on('click', 'article', function(e) {
         e.stopPropagation();
         totop(this);
     })
@@ -176,7 +176,13 @@
    
     $article.each(function(){
         var $this = $(this);
-        
+        if($this.hasClass('texte')){
+            $this.pep({
+                constrainTo: '#pep',       
+                easing:false,
+                allowDragEventPropagation:false
+            }) 
+        }
         $this.css({
             'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
             'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
