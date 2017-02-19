@@ -41,6 +41,8 @@
             $home.width(bodyWidth);
             $('#header').height(bodyHeight);
             $('#header').width(bodyWidth);
+            $body.height(bodyHeight);
+            $body.width(bodyWidth);
             $slide.height(bodyHeight);
         };
 
