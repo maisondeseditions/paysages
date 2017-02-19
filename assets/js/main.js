@@ -33,15 +33,15 @@
         bodyHeight = 0, 
         bodyWidth = 0, 
         calculateHeights = function(){
-            bodyHeight = $body.outerHeight();
-            bodyWidth = $body.outerWidth();
+            bodyHeight = $(window).outerHeight();
+            bodyWidth = $(window).outerWidth();
             imgHeight = bodyHeight - 80;
             $nav.height(bodyHeight);
             $home.height(bodyHeight);
             $home.width(bodyWidth);
 
-            $body.height(bodyHeight);
-            $body.width(bodyWidth);
+            $('#header').height(bodyHeight);
+            $('#header').width(bodyWidth);
             $slide.height(bodyHeight);
         };
 
