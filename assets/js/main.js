@@ -30,13 +30,16 @@
     // calculate heights
 
     var imgHeight = 0,
-        navHeight = 0, 
+        bodyHeight = 0, 
+        bodyWidth = 0, 
         calculateHeights = function(){
-            navHeight = $body.outerHeight();
-            imgHeight = navHeight - 80;
-            $nav.height(navHeight);
-            $home.height(navHeight);
-            $slide.height(navHeight);
+            bodyHeight = $body.outerHeight();
+            bodyWidth = $body.outerWidth();
+            imgHeight = bodyHeight - 80;
+            $nav.height(bodyHeight);
+            $home.height(bodyHeight);
+            $home.width(bodyWidth);
+            $slide.height(bodyHeight);
         };
 
     $(window).on('resize', calculateHeights);
