@@ -116,7 +116,23 @@
         
     }
 
-    
+    $home.on('click', function() {
+        if(imgLoaded){
+            $home.addClass('invisible');
+            setTimeout(function(){
+                $home.css('z-index',-1)
+            }, 300)
+            setTimeout(function() {                
+                $('.pep').addClass('visible');
+                // $('html').velocity('scroll', {
+                //     duration: 500,
+                //      offset: "450px",
+                //     easing: 'easeOutCubic'
+                // });
+                
+            }, 500)
+        }
+    });
 
     $(".hamburger").click(function(){
         $nav.toggleClass("is-active");
@@ -140,7 +156,7 @@
         }
     })
 
-    $article.on('tap click', function(e) {
+    $article.on('click', function(e) {
         e.stopPropagation();
         totop(this);
     })
