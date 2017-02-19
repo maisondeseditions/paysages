@@ -139,11 +139,6 @@
             }, 300)
             setTimeout(function() {                
                 $('.pep').addClass('visible');
-                // $('html').velocity('scroll', {
-                //     duration: 500,
-                //      offset: "450px",
-                //     easing: 'easeOutCubic'
-                // });
                 
             }, 500)
         }
@@ -200,8 +195,8 @@
         'height': canvas.height + 'px'
     }) 
 
-   
-    $article.each(function(){
+    var lequel = Math.floor( Math.random() * $article.length)
+    $article.each(function(idx){
         var $this = $(this);
         if($this.hasClass('texte')){
             $this.pep({
@@ -210,10 +205,18 @@
                 allowDragEventPropagation:false
             }) 
         }
-        $this.css({
-            'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
-            'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
-        })
+        if(idx == lequel){
+            $this.css({
+                'left': Math.floor( Math.random() * bodyWidth ) +'px',
+                'top': Math.floor( bodyHeight -  Math.random() * 180 ) +'px'
+            })
+        } else {
+            $this.css({
+                'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
+                'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
+            })
+        }
+        
     })
 
 })(jQuery);
