@@ -9,6 +9,7 @@
         >
       <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
             <img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>' />
+            <img src="<?= url('assets/img/pix.png')  ?>" data-src="<?= url('assets/img/pix.png')  ?>">
       <?php endif ?>
       </article>
     <?php endforeach ?>
@@ -21,7 +22,9 @@
         >
       <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
             <img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>' />
+            <img src="<?= url('assets/img/pix.png')  ?>" data-src="<?= url('assets/img/pix.png')  ?>"
       <?php endif ?>
+      
       </article>
     <?php endforeach ?>
 
