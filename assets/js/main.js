@@ -99,21 +99,16 @@
             }
         }, 500)
         
-        var box = $el[0].getBoundingClientRect ? $el[0].getBoundingClientRect() : {top: 0, left: 0};
-
+        
         var o = {
-                top: parseInt($el.css('top'))  - 40,
-                left: parseInt($el.css('left')) - 40
+            top: parseInt($el.css('top'))  - 40,
+            left: parseInt($el.css('left')) - 40
         };
-        console.log(o.top, o.left)
-        $('#pepwrapper').animate(
-            {
-                'scrollLeft':  o.left,
-                'scrollTop':  o.top
-            },
-            500, function() { 
-            console.log("Finished animating");
-        });
+        
+        $('#pepwrapper').animate({
+            'scrollLeft':  o.left,
+            'scrollTop':  o.top
+        }, 500 );
 
         // reset others
         $article.css('z-index', 0);
@@ -195,15 +190,19 @@
         'height': canvas.height + 'px'
     }) 
 
-    var lequel = Math.floor( Math.random() * $article.length)
+    var lequel = Math.floor( Math.random() * $article.length);
+    $article.pep({
+        constrainTo: '#pep',       
+        //shouldEase:false,
+        //startThreshold:[20,20],
+        shouldPreventDefault:false,
+        useCSSTranslation: false,
+        allowDragEventPropagation:false
+    }) 
     $article.each(function(idx){
         var $this = $(this);
         
-            $this.pep({
-                constrainTo: '#pep',       
-                easing:false,
-                allowDragEventPropagation:false
-            }) 
+
         if($this.hasClass('texte')){}
         if(idx == lequel){
             $this.css({
