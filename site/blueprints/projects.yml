@@ -1,0 +1,21 @@
+title: Projects
+
+files: false
+
+pages:
+  template: 
+    - projects
+    - texte
+    - image
+    - video
+    - document
+
+options: 
+  template: false  
+  status: false  
+  url: false  
+
+fields:
+  title:
+    label: Title
+    type:  text

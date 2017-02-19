@@ -1,0 +1,12 @@
+label: Related products
+type: structure
+entry: >
+  {{related}}
+fields:
+  related:
+    label: Related content
+    type: radio
+    options: query
+    query: 
+      page: paysages
+      fetch: pages

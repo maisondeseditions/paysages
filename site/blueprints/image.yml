@@ -1,0 +1,12 @@
+title: Image
+
+files:
+  sortable: true
+
+pages: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+  related: related
