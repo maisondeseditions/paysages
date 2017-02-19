@@ -1,5 +1,4 @@
 
-@import "compass/reset";
 @import "compass/css3";
 
 * { box-sizing: border-box; }
@@ -92,9 +91,9 @@ img {
 /* ------------------------------ home */
 #home {
     background: #eee;
-    display: flex;
-    align-items:center;
-    justify-content: center;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
     position: fixed;
     text-align: center;
     top: 0;

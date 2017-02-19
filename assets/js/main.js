@@ -40,38 +40,35 @@
         };
 
     $(window).on('resize', calculateHeights);
+    calculateHeights()
 
     var totop = function(el){
         
         var $el = $(el);
 
-        // reset others
-        $article.css('z-index', 0)
-        $('img').not($img).each(function(){
-            $(this).velocity({
-                'height':$(this).attr('height'),
-                'opacity':.8
-            }, 350, 'easeOutQuad')
-        })
+        
         
         $el.css('z-index', 200)    
 
         // if has image
         var $img = $el.find('img').first();
         if($img.length){
+
             if ($img.hasClass('big')){
+                console.log('is big', $img.attr('height'))
                 $img.removeClass('big');
-                $img.velocity({
+                $el.children().last().remove();
+                $img.animate({
                     'height':$img.attr('height'),
                     'opacity':.8
-                }, 350, 'easeOutQuad');    
-                $el.children().last().remove() 
+                }, 350);    
+                
             } else {
                 $img.addClass('big');
-                $img.velocity({
+                $img.animate({
                     'height':imgHeight,
                     'opacity':1
-                }, 350, 'easeOutQuad');   
+                }, 350);   
                 $el.append($('<img src="' + $img.data('source') + '">')) 
             }
 
@@ -80,34 +77,60 @@
 
 
         // call related
-        var s = setTimeout(function () {
+        // var s = setTimeout(function () {
             
-            var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
+        //     var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
             
-            for (var i = 0; i < related.length; i++) {
-                if(related[i] != ''){
-                    var $r = $( '#'+related[i] );
-                    $r.velocity({
-                        'left':parseInt($el.css('left')) + $el.width() + 40 + Math.floor( Math.random() * 150 ),
-                        'top':parseInt($el.css('top')) + i * 80 
-                    }, 600, 'easeOutQuad');
-                    $r.css('z-index', 100);
-                }
-            }
-        }, 500)
+        //     for (var i = 0; i < related.length; i++) {
+        //         if(related[i] != ''){
+        //             var $r = $( '#'+related[i] );
+        //             $r.velocity({
+        //                 'left':parseInt($el.css('left')) + $el.width() + 40 + Math.floor( Math.random() * 150 ),
+        //                 'top':parseInt($el.css('top')) + i * 80 
+        //             }, 600, 'easeOutQuad');
+        //             $r.css('z-index', 100);
+        //         }
+        //     }
+        // }, 500)
         
-        $el.velocity('scroll', {
-            duration: 500,
-            axis:'x',
-            offset: -40,
-            easing: 'ease-in-out'
-        });
-        $el.velocity('scroll', {
-            duration: 500,
-            axis:'y',
-            offset: -40,
-            easing: 'ease-in-out'
-        });
+        // $el.velocity('scroll', {
+        //     duration: 500,
+        //     axis:'x',
+        //     offset: -40,
+        //     easing: 'ease-in-out'
+        // });
+        // $el.velocity('scroll', {
+        //     duration: 500,
+        //     axis:'y',
+        //     offset: -40,
+        //     easing: 'ease-in-out'
+        // });
+        
+        var box = $el[0].getBoundingClientRect ? $el[0].getBoundingClientRect() : {top: 0, left: 0};
+
+        var o = {
+                top: box.top + (window.pageYOffset || document.scrollTop || 0) - (document.clientTop || 0),
+                left: box.left + (window.pageXOffset || document.scrollLeft || 0) - (document.clientLeft || 0)
+        };
+        console.log(o.top)
+        // $('html').animate(
+        //     {
+        //         'scrollLeft':  o.left,
+        //         'scrollTop':  o.left
+        //     },
+        //     500
+        // );
+
+        // reset others
+        $article.css('z-index', 0)
+        $('img.big').not($img).each(function(){
+            $(this).removeClass('big');
+            $(this).next().remove();
+            $(this).animate({
+                'height':$(this).attr('height'),
+                'opacity':.8
+            }, 350)
+        })
         
     }
 
@@ -152,6 +175,7 @@
     })
 
     $article.on('tap click', function(e) {
+        e.stopPropagation();
         totop(this);
     })
 
@@ -175,12 +199,12 @@
             easing:false,
             allowDragEventPropagation:false
         }) 
-        if (!$this.hasClass('related')) {
+        //if (!$this.hasClass('related')) {
             $this.css({
                 'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
                 'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
             })
-        }
+        //}
     })
 
 
