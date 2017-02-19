@@ -41,21 +41,6 @@
 
     </div>
 
-  <div id="home">
-    <div>
-      <h2>Clémentine Fort</h2>
-      <h1>Paysages domestiques</h1>
-      <p>
-      — </p>
-      <div class="intro">
-        <p class="loading">
-          Chargement en cours
-        </p>
-        <p class="loaded">
-          Cliquez pour entrer, <br>glissez pour explorer
-        </p>
-      </div>
-    </div>
-  </div>
+  
 
 <?php snippet('footer') ?>
