@@ -38,7 +38,7 @@
 </head>
 <body class="">
   
-    
+  <header id="header">
   <nav class="">
 
     <div class="menu">
@@ -78,6 +78,7 @@
   </div>
   <?php endif ?>
   <?php endforeach ?>
+  </header>
 
   <div id="home">
     <div>
