@@ -35,6 +35,7 @@
             navHeight = $body.outerHeight();
             imgHeight = navHeight - 80;
             $nav.height(navHeight);
+            $home.height(navHeight);
             $slide.height(navHeight);
         };
 
@@ -188,7 +189,5 @@
             'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
         })
     })
-    $('#home').css('backgroundColor', 'red')
-
 
 })(jQuery);
