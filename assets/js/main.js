@@ -18,7 +18,7 @@
     
     var detectMouse = function(e){
         if (e.type === 'mousedown' || e.type === 'mousemove') {
-            $('body').addClass('dragscroll free');
+            $('#pepwrapper').addClass('dragscroll free');
         }
         $body.off('mousedown mousemove', detectMouse);
         dragscroll.reset();
