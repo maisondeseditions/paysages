@@ -1,6 +1,18 @@
 <?php snippet('header') ?>
     <div id="pepwrapper">
     <div class="pep" id="pep">
+
+    <?php 
+      $textes = page('paysages/textes')->children()->visible();
+      foreach ($textes as $p): ?>
+      <article class="texte" id="<?php echo $p->slug() ?>" 
+        data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
+        >
+      <?php echo $p->text() ?>
+      </article>
+    <?php endforeach ?>
+
+    
     <?php 
       $pageimages = page('paysages/images')->children()->visible();
       foreach ($pageimages as $p): ?>
@@ -28,15 +40,7 @@
       </article>
     <?php endforeach ?>
 
-    <?php 
-      $textes = page('paysages/textes')->children()->visible();
-      foreach ($textes as $p): ?>
-      <article class="texte" id="<?php echo $p->slug() ?>" 
-        data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
-        >
-      <?php echo $p->text() ?>
-      </article>
-    <?php endforeach ?>
+    
 
 
     </div>

@@ -181,12 +181,12 @@
 
     var canvas = {
         width:$article.length * 80,
-        height:$article.length * 60 
+        height:$article.length * 80 
     }      
 
-    
+    console.log(canvas)
     $pep.css({
-        'width': canvas.width + $('body').width() + 'px',
+        'width': canvas.width + 'px',
         'height': canvas.height + 'px'
     }) 
 
@@ -199,13 +199,10 @@
         if($this.hasClass('texte')){
             $this.pep({
                 constrainTo: '#pep',       
-                //shouldEase:false,
-                //startThreshold:[20,20],
-                // shouldPreventDefault:false,
-                // useCSSTranslation: false,
                 allowDragEventPropagation:false
             }) 
         }
+
         if(idx == lequel){
             $this.css({
                 'left': Math.floor( Math.random() * bodyWidth ) +'px',
@@ -213,8 +210,8 @@
             })
         } else {
             $this.css({
-                'left': Math.floor( Math.random() * (canvas.width  - 400) ) +'px',
-                'top': Math.floor( Math.random() * (canvas.height  - 400) ) +'px'
+                'left': Math.floor( Math.random() * (canvas.width - 400) ) +'px',
+                'top': Math.floor( Math.random() * (canvas.height - 400) ) +'px'
             })
         }
         
