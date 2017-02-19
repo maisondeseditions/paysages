@@ -39,8 +39,8 @@
             $nav.height(bodyHeight);
             $home.height(bodyHeight);
             $home.width(bodyWidth);
-            // $('#header').height(bodyHeight);
-            // $('#header').width(bodyWidth);
+            $('#header').height(bodyHeight);
+            $('#header').width(bodyWidth);
             $slide.height(bodyHeight);
         };
 
@@ -159,7 +159,6 @@
         e.stopPropagation();
         e.preventDefault();
         var _url= $(this).attr('href');
-        console.log(_url)
         $target= $( $(this).data('target'));
         $iframe = $('<iframe src="' + _url + '" frameborder="0"></iframe>');
         $target.html($iframe);
@@ -168,7 +167,8 @@
     })
 
     $nav.on('click', function(){
-        if($nav.hasClass('is-slided')){        
+        if($nav.hasClass('is-slided')){  
+            $('iframe').remove();
             $slide.removeClass('visible url-visible');
             $nav.removeClass("is-slided url-slided");
         }

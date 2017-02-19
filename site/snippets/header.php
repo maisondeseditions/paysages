@@ -31,7 +31,7 @@
     </head>
     <body class="">
         
-        
+        <header id="header">
         <nav class="">
             <div class="menu">
                 <h2>Clémentine Fort</h2>
@@ -71,6 +71,8 @@
             </div>
         <?php endif ?>
         <?php endforeach ?>
+        </header>
+
         
         <div id="home">
             <div>
@@ -88,3 +90,4 @@
                 </div>
             </div>
         </div>
+
