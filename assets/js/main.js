@@ -83,36 +83,37 @@
 
 
         // call related
-        // var s = setTimeout(function () {
+        var s = setTimeout(function () {
             
-        //     var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
+            var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
             
-        //     for (var i = 0; i < related.length; i++) {
-        //         if(related[i] != ''){
-        //             var $r = $( '#'+related[i] );
-        //             $r.velocity({
-        //                 'left':parseInt($el.css('left')) + $el.width() + 40 + Math.floor( Math.random() * 150 ),
-        //                 'top':parseInt($el.css('top')) + i * 80 
-        //             }, 600, 'easeOutQuad');
-        //             $r.css('z-index', 100);
-        //         }
-        //     }
-        // }, 500)
+            for (var i = 0; i < related.length; i++) {
+                if(related[i] != ''){
+                    var $r = $( '#'+related[i] );
+                    $r.velocity({
+                        'left':parseInt($el.css('left')) + $el.width() + 40 + Math.floor( Math.random() * 150 ),
+                        'top':parseInt($el.css('top')) + i * 80 
+                    }, 600, 'easeOutQuad');
+                    $r.css('z-index', 100);
+                }
+            }
+        }, 500)
         
         var box = $el[0].getBoundingClientRect ? $el[0].getBoundingClientRect() : {top: 0, left: 0};
 
         var o = {
-                top: box.top + (window.pageYOffset || document.scrollTop || 0) - (document.clientTop || 0),
-                left: box.left + (window.pageXOffset || document.scrollLeft || 0) - (document.clientLeft || 0)
+                top: parseInt($el.css('top'))  - 40,
+                left: parseInt($el.css('left')) - 40
         };
-        console.log(o.top)
-        // $('html').animate(
-        //     {
-        //         'scrollLeft':  o.left,
-        //         'scrollTop':  o.left
-        //     },
-        //     500
-        // );
+        console.log(o.top, o.left)
+        $('#pepwrapper').animate(
+            {
+                'scrollLeft':  o.left,
+                'scrollTop':  o.top
+            },
+            500, function() { 
+            console.log("Finished animating");
+        });
 
         // reset others
         $article.css('z-index', 0);
