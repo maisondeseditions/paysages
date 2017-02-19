@@ -1,0 +1,237 @@
+
+@import "compass/reset";
+@import "compass/css3";
+
+* { box-sizing: border-box; }
+
+body, html {
+    height: 100%;
+    background: #eee;
+}
+body { 
+    margin: 0;
+    /* overflow: hidden; */
+    font-family:"antiqueolive";
+    font-size: 150%;
+    color:rgba(0,0,0,.85);
+
+    background: #eee;
+}
+
+body.dragscroll{
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+body.dragscroll:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+body.locked {
+    overflow: hidden;
+}
+
+/* ------------------------------ draggable /scrollable */
+.pep { 
+    width: 1000px;
+    height: 1000px;
+    opacity: 0;
+    @include transition(opacity 250ms ease-out);
+}
+.pep.visible { opacity: 1; }
+
+
+/* ------------------------------ articles */
+article { 
+    position: absolute;    
+    cursor: move;
+}
+.texte {
+    width: 420px;
+    max-width: calc(100vw - 80px);
+}
+.image, .document {
+    background: linear-gradient( #eaeaea, #ddd );
+}
+img { 
+    display: block;
+    opacity: .8;
+}
+.image img:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    top: 0
+}
+
+.document img:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    top: 0
+}
+.document {
+
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+}
+.image {
+
+    filter: grayscale(.7);
+    -webkit-filter: grayscale(.7);
+    -moz-filter: grayscale(.7);
+    -o-filter: grayscale(.7);
+    -ms-filter: grayscale(.7);
+}
+
+
+
+/* ------------------------------ home */
+#home {
+    background: #eee;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    @include transition(opacity 250ms ease-out);
+    z-index: 900;
+}
+
+#home.invisible{
+    opacity: 0;
+}
+h1, h2 {
+    font-size: 1em;
+    font-weight: normal;
+}
+h1 { font-weight: bold; }
+#home p {
+    text-align: center;
+    font-size: .75em;
+}
+
+.intro {
+    position: relative;
+    top: -1em;
+}
+.loading, .loaded {
+    opacity: 1;
+    top:0px;
+    position: absolute;
+    @include transition(all 250ms ease-out);
+    width: 100%;
+}
+.loaded {
+    opacity: 0;
+    top:20px;
+    @include transition(all 250ms ease-out 150ms);
+}
+.loading.invisible {
+    opacity: 0;
+    top: -5px;
+}
+.loaded.visible {
+    opacity: 1;
+    top: 0px;
+}
+
+
+
+/* ------------------------------ nav */
+nav {
+    position: fixed;
+    z-index: 650;
+    background: black;
+    height: 100vh;
+    width: 90vw;
+    right: 0;
+    top: 0;
+    color: white;
+    @include transition(all 0.3s ease-out);
+    @include transform(translateX(90vw));
+}
+nav.is-active {
+    @include transform(translateX(40vw));
+}
+.menu,
+.slide {
+    padding: 30px 40px;
+}
+ul { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-bottom: .5em;
+}
+.menu a {color: white; text-decoration: none;}
+.menu h1, 
+.menu h2 { margin: 0; }
+.hamburger {
+    position: absolute;
+    @include transform(translateX(-90vw));
+    right: 20px;
+    top: 20px;
+}
+.hamburger .line{
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  display: block;
+  margin: 8px auto;
+  @include transition(all 0.3s ease-out);
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+
+nav.is-active .line:nth-child(1){
+  @include transform(translateY(10px));
+}
+
+nav.is-active .line:nth-child(3){
+  @include transform(translateY(-10px));
+}
+
+
+/* ------------------------------ slides */
+.slide {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    z-index: 850;
+    background: black;
+    height: 100vh;
+    width: 75vw;
+    right: 0;
+    color: white;
+    @include transition(all 0.3s ease-out);
+    @include transform(translateX(75vw));
+}
+.content { max-width: 600px; }
+.slide.visible{
+    @include transform(translateX(0vw));
+}
+nav.is-slided {
+    @include transform(translateX(0vw));   
+    opacity: .8;
+}
+nav.is-slided:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; left:  0; bottom: 0;
+    background: rgba(0,0,0,.8);
+}
