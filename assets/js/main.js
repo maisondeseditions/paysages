@@ -188,6 +188,7 @@
             'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
         })
     })
+    $('#home').css('backgroundColor', 'red')
 
 
 })(jQuery);
