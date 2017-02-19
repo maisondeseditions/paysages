@@ -39,7 +39,7 @@
             $nav.height(bodyHeight);
             $home.height(bodyHeight);
             $home.width(bodyWidth);
-
+            alert(bodyWidth + ' / '+ bodyHeight),
             $('#header').height(bodyHeight);
             $('#header').width(bodyWidth);
             $slide.height(bodyHeight);
