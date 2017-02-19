@@ -274,7 +274,7 @@ li, p, h1, h2 {
     @include transition(all 0.3s ease-out);
     left:100%
 }
-.urlslide { width: calc(100% - 20px); }
+.urlslide { width: calc(90% - 20px); }
 .content { max-width: 600px; }
 
 .slide.visible{

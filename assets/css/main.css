@@ -358,7 +358,7 @@ li, p, h1, h2 {
 
 /* line 277, ../scss/main.scss */
 .urlslide {
-  width: calc(100% - 20px);
+  width: calc(90% - 20px);
 }
 
 /* line 278, ../scss/main.scss */
