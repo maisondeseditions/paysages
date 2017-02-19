@@ -156,5 +156,32 @@
         }
     })
 
+    $article.on('tap click', function(e) {
+        e.stopPropagation();
+        totop(this);
+    })
+
+
+    var canvas = {
+        width:$article.length * 80,
+        height:$article.length * 80 
+    }      
+
+    
+    $pep.css({
+        'width': canvas.width + $('body').width() + 'px',
+        'height': canvas.height + 'px'
+    }) 
+
+   
+    $article.each(function(){
+        var $this = $(this);
+        
+        $this.css({
+            'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
+            'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
+        })
+    })
+
 
 })(jQuery);
