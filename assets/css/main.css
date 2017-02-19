@@ -14,12 +14,13 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: "WorkSans", "antiqueolive";
-  font-size: 150%;
+  font-size: 130%;
+  line-height: 1.3;
   color: rgba(0, 0, 0, 0.85);
   background: #eee;
 }
 
-/* line 21, ../scss/main.scss */
+/* line 22, ../scss/main.scss */
 body.dragscroll {
   cursor: move;
   cursor: grab;
@@ -27,20 +28,20 @@ body.dragscroll {
   cursor: -webkit-grab;
 }
 
-/* line 27, ../scss/main.scss */
+/* line 28, ../scss/main.scss */
 body.dragscroll:active {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 33, ../scss/main.scss */
 body.locked {
   overflow: hidden;
 }
 
 /* ------------------------------ draggable /scrollable */
-/* line 37, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 #pepwrapper {
   position: fixed;
   z-index: 10;
@@ -51,7 +52,7 @@ body.locked {
   overflow: scroll;
 }
 
-/* line 47, ../scss/main.scss */
+/* line 48, ../scss/main.scss */
 .pep {
   width: 1000px;
   height: 1000px;
@@ -62,50 +63,50 @@ body.locked {
   transition: opacity 250ms ease-out;
 }
 
-/* line 53, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 .pep.visible {
   opacity: 1;
 }
 
 /* ------------------------------ articles */
-/* line 57, ../scss/main.scss */
+/* line 58, ../scss/main.scss */
 article {
   position: absolute;
   cursor: move;
 }
 
-/* line 61, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 .texte {
   width: 420px;
   max-width: calc(100vw - 80px);
 }
 
-/* line 65, ../scss/main.scss */
+/* line 66, ../scss/main.scss */
 .image, .document {
   background: linear-gradient(#eaeaea, #dddddd);
 }
 
-/* line 68, ../scss/main.scss */
+/* line 69, ../scss/main.scss */
 img {
   display: block;
   opacity: .8;
 }
 
-/* line 72, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 .image img:nth-child(2) {
   position: absolute;
   width: 100%;
   top: 0;
 }
 
-/* line 78, ../scss/main.scss */
+/* line 79, ../scss/main.scss */
 .document img:nth-child(2) {
   position: absolute;
   width: 100%;
   top: 0;
 }
 
-/* line 83, ../scss/main.scss */
+/* line 84, ../scss/main.scss */
 .document {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
@@ -114,7 +115,7 @@ img {
   -ms-filter: grayscale(1);
 }
 
-/* line 91, ../scss/main.scss */
+/* line 92, ../scss/main.scss */
 .image {
   filter: grayscale(0.7);
   -webkit-filter: grayscale(0.7);
@@ -124,7 +125,7 @@ img {
 }
 
 /* ------------------------------ home */
-/* line 105, ../scss/main.scss */
+/* line 106, ../scss/main.scss */
 #home {
   background: #eee;
   display: -webkit-flex;
@@ -147,35 +148,35 @@ img {
   z-index: 900;
 }
 
-/* line 121, ../scss/main.scss */
+/* line 122, ../scss/main.scss */
 #home.invisible {
   opacity: 0;
 }
 
-/* line 124, ../scss/main.scss */
+/* line 125, ../scss/main.scss */
 h1, h2 {
   font-size: 1em;
   font-weight: normal;
 }
 
-/* line 128, ../scss/main.scss */
+/* line 129, ../scss/main.scss */
 h1 {
   font-weight: bold;
 }
 
-/* line 129, ../scss/main.scss */
+/* line 130, ../scss/main.scss */
 #home p {
   text-align: center;
   font-size: .75em;
 }
 
-/* line 134, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 .intro {
   position: relative;
   top: -1em;
 }
 
-/* line 138, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 .loading, .loaded {
   opacity: 1;
   top: 0px;
@@ -187,7 +188,7 @@ h1 {
   width: 100%;
 }
 
-/* line 145, ../scss/main.scss */
+/* line 146, ../scss/main.scss */
 .loaded {
   opacity: 0;
   top: 20px;
@@ -198,20 +199,20 @@ h1 {
   transition: all 250ms ease-out 150ms;
 }
 
-/* line 150, ../scss/main.scss */
+/* line 151, ../scss/main.scss */
 .loading.invisible {
   opacity: 0;
   top: -5px;
 }
 
-/* line 154, ../scss/main.scss */
+/* line 155, ../scss/main.scss */
 .loaded.visible {
   opacity: 1;
   top: 0px;
 }
 
 /* ------------------------------ nav */
-/* line 163, ../scss/main.scss */
+/* line 164, ../scss/main.scss */
 #header {
   position: fixed;
   z-index: 850;
@@ -225,22 +226,22 @@ h1 {
   transition: all 0.3s ease-out;
 }
 
-/* line 172, ../scss/main.scss */
+/* line 173, ../scss/main.scss */
 #header {
   width: 100%;
 }
 
-/* line 173, ../scss/main.scss */
+/* line 174, ../scss/main.scss */
 #header.is-active {
   left: 50%;
 }
 
-/* line 174, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #header.is-slided {
   left: 10%;
 }
 
-/* line 176, ../scss/main.scss */
+/* line 177, ../scss/main.scss */
 nav {
   position: absolute;
   z-index: 650;
@@ -252,48 +253,48 @@ nav {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 189, ../scss/main.scss */
+/* line 190, ../scss/main.scss */
 .menu,
 .slide {
   padding: 30px 40px;
 }
 
-/* line 193, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 .urlslide {
   padding: 0;
 }
 
-/* line 196, ../scss/main.scss */
+/* line 197, ../scss/main.scss */
 .slide iframe {
   height: 100%;
   width: 100%;
 }
 
-/* line 199, ../scss/main.scss */
+/* line 200, ../scss/main.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 204, ../scss/main.scss */
-li {
-  margin-bottom: .5em;
+/* line 205, ../scss/main.scss */
+li, p, h1, h2 {
+  margin: .65em 0;
 }
 
-/* line 207, ../scss/main.scss */
+/* line 208, ../scss/main.scss */
 .menu a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
-/* line 208, ../scss/main.scss */
+/* line 209, ../scss/main.scss */
 .menu h1,
 .menu h2 {
   margin: 0;
 }
 
-/* line 210, ../scss/main.scss */
+/* line 211, ../scss/main.scss */
 .hamburger {
   z-index: 650;
   position: absolute;
@@ -301,7 +302,7 @@ li {
   top: 20px;
 }
 
-/* line 216, ../scss/main.scss */
+/* line 217, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -310,17 +311,17 @@ li {
   margin: 8px auto;
 }
 
-/* line 225, ../scss/main.scss */
+/* line 226, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 244, ../scss/main.scss */
+/* line 245, ../scss/main.scss */
 #header.is-active .line:nth-child(2) {
   opacity: 0;
 }
 
-/* line 248, ../scss/main.scss */
+/* line 249, ../scss/main.scss */
 #header.is-active .line:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(45deg);
   -ms-transform: translateY(10px) rotate(45deg);
@@ -328,7 +329,7 @@ li {
   transform: translateY(10px) rotate(45deg);
 }
 
-/* line 255, ../scss/main.scss */
+/* line 256, ../scss/main.scss */
 #header.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-10px) rotate(-45deg);
   -ms-transform: translateY(-10px) rotate(-45deg);
@@ -337,7 +338,7 @@ li {
 }
 
 /* ------------------------------ slides */
-/* line 263, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -355,33 +356,33 @@ li {
   left: 100%;
 }
 
-/* line 276, ../scss/main.scss */
+/* line 277, ../scss/main.scss */
 .urlslide {
   width: calc(100% - 20px);
 }
 
-/* line 277, ../scss/main.scss */
+/* line 278, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 279, ../scss/main.scss */
+/* line 280, ../scss/main.scss */
 .slide.visible {
   left: 10%;
 }
 
-/* line 282, ../scss/main.scss */
+/* line 283, ../scss/main.scss */
 .urlslide.visible {
   left: 20px;
 }
 
-/* line 286, ../scss/main.scss */
+/* line 287, ../scss/main.scss */
 #header.is-slided nav {
   left: 0;
   opacity: .8;
 }
 
-/* line 290, ../scss/main.scss */
+/* line 291, ../scss/main.scss */
 #header.is-slided nav:after {
   content: "";
   display: block;
