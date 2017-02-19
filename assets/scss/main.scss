@@ -159,7 +159,7 @@ nav {
     @include transform(translateX(100%));
 }
 nav.is-active {
-    @include transform(translateX(40%));
+    @include transform(translateX(45%));
 }
 .menu,
 .slide {
@@ -177,9 +177,11 @@ li {
 .menu h1, 
 .menu h2 { margin: 0; }
 .hamburger {
+    z-index: 650;
     position: fixed;
-    left: -60px;
+    right: 20px;
     top: 20px;
+    @include transition(all 0.25s ease-out);
 }
 .hamburger .line{
   width: 35px;
@@ -194,7 +196,12 @@ li {
   cursor: pointer;
 }
 
-
+nav.is-active ~ .hamburger {
+    right: calc(50% + 20px)
+}
+nav.is-slided ~ .hamburger {
+    right: calc(90% + 20px)
+}
 nav.is-active .line:nth-child(1){
   @include transform(translateY(10px));
 }

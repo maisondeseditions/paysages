@@ -222,10 +222,10 @@ nav {
 
 /* line 161, ../scss/main.scss */
 nav.is-active {
-  -moz-transform: translateX(40%);
-  -ms-transform: translateX(40%);
-  -webkit-transform: translateX(40%);
-  transform: translateX(40%);
+  -moz-transform: translateX(45%);
+  -ms-transform: translateX(45%);
+  -webkit-transform: translateX(45%);
+  transform: translateX(45%);
 }
 
 /* line 164, ../scss/main.scss */
@@ -260,12 +260,17 @@ li {
 
 /* line 179, ../scss/main.scss */
 .hamburger {
+  z-index: 650;
   position: fixed;
-  left: -60px;
+  right: 20px;
   top: 20px;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 
-/* line 184, ../scss/main.scss */
+/* line 186, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -278,12 +283,22 @@ li {
   transition: all 0.3s ease-out;
 }
 
-/* line 193, ../scss/main.scss */
+/* line 195, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 198, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
+nav.is-active ~ .hamburger {
+  right: calc(50% + 20px);
+}
+
+/* line 202, ../scss/main.scss */
+nav.is-slided ~ .hamburger {
+  right: calc(90% + 20px);
+}
+
+/* line 205, ../scss/main.scss */
 nav.is-active .line:nth-child(1) {
   -moz-transform: translateY(10px);
   -ms-transform: translateY(10px);
@@ -291,7 +306,7 @@ nav.is-active .line:nth-child(1) {
   transform: translateY(10px);
 }
 
-/* line 202, ../scss/main.scss */
+/* line 209, ../scss/main.scss */
 nav.is-active .line:nth-child(3) {
   -moz-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
@@ -300,7 +315,7 @@ nav.is-active .line:nth-child(3) {
 }
 
 /* ------------------------------ slides */
-/* line 208, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -321,12 +336,12 @@ nav.is-active .line:nth-child(3) {
   transform: translateX(100%);
 }
 
-/* line 221, ../scss/main.scss */
+/* line 228, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 222, ../scss/main.scss */
+/* line 229, ../scss/main.scss */
 .slide.visible {
   -moz-transform: translateX(0%);
   -ms-transform: translateX(0%);
@@ -334,7 +349,7 @@ nav.is-active .line:nth-child(3) {
   transform: translateX(0%);
 }
 
-/* line 225, ../scss/main.scss */
+/* line 232, ../scss/main.scss */
 nav.is-slided {
   -moz-transform: translateX(0%);
   -ms-transform: translateX(0%);
@@ -343,7 +358,7 @@ nav.is-slided {
   opacity: .8;
 }
 
-/* line 229, ../scss/main.scss */
+/* line 236, ../scss/main.scss */
 nav.is-slided:after {
   content: "";
   display: block;

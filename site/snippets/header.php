@@ -37,13 +37,9 @@
 
 </head>
 <body class="">
-
+  
+    
   <nav class="">
-    <div class="hamburger" id="hamburger-2">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </div>
 
     <div class="menu">
       <h2>Clémentine Fort</h2>
@@ -66,6 +62,11 @@
       
     </div>
   </nav>
+  <div class="hamburger" id="hamburger-2">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
 
   <?php foreach ($pages as $page) :?>
   <?php if ($page->externalurl() == ''): ?>
