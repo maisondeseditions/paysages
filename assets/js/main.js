@@ -181,7 +181,7 @@
 
     var canvas = {
         width:$article.length * 80,
-        height:$article.length * 80 
+        height:$article.length * 60 
     }      
 
     
@@ -213,8 +213,8 @@
             })
         } else {
             $this.css({
-                'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
-                'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
+                'left': Math.floor( Math.random() * (canvas.width  - 400) ) +'px',
+                'top': Math.floor( Math.random() * (canvas.height  - 400) ) +'px'
             })
         }
         
