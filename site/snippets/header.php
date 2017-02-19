@@ -38,7 +38,7 @@
 </head>
 <body class="">
 
-  <nav>
+  <nav class="is-active">
     <div class="hamburger" id="hamburger-2">
       <span class="line"></span>
       <span class="line"></span>
