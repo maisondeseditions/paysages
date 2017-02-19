@@ -197,7 +197,7 @@
         //startThreshold:[20,20],
         shouldPreventDefault:false,
         useCSSTranslation: false,
-        allowDragEventPropagation:false
+        allowDragEventPropagation:true
     }) 
     $article.each(function(idx){
         var $this = $(this);
