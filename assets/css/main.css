@@ -255,30 +255,41 @@ nav.is-active {
 }
 
 /* line 186, ../scss/main.scss */
+.urlslide {
+  padding: 0;
+}
+
+/* line 189, ../scss/main.scss */
+.slide iframe {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 192, ../scss/main.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 191, ../scss/main.scss */
+/* line 197, ../scss/main.scss */
 li {
   margin-bottom: .5em;
 }
 
-/* line 194, ../scss/main.scss */
+/* line 200, ../scss/main.scss */
 .menu a {
   color: white;
   text-decoration: none;
 }
 
-/* line 195, ../scss/main.scss */
+/* line 201, ../scss/main.scss */
 .menu h1,
 .menu h2 {
   margin: 0;
 }
 
-/* line 197, ../scss/main.scss */
+/* line 203, ../scss/main.scss */
 .hamburger {
   z-index: 650;
   position: fixed;
@@ -290,7 +301,7 @@ li {
   transition: all 0.25s ease-out;
 }
 
-/* line 204, ../scss/main.scss */
+/* line 210, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -303,31 +314,31 @@ li {
   transition: all 0.3s ease-out;
 }
 
-/* line 213, ../scss/main.scss */
+/* line 219, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 217, ../scss/main.scss */
+/* line 223, ../scss/main.scss */
 nav.is-active ~ .hamburger {
   right: calc(50% + 20px);
 }
 
-/* line 220, ../scss/main.scss */
+/* line 226, ../scss/main.scss */
 nav.is-slided ~ .hamburger {
   right: calc(90% + 20px);
 }
 
-/* line 223, ../scss/main.scss */
-nav.is-active .line:nth-child(1) {
+/* line 229, ../scss/main.scss */
+nav.is-active ~ .hamburger .line:nth-child(1) {
   -moz-transform: translateY(10px);
   -ms-transform: translateY(10px);
   -webkit-transform: translateY(10px);
   transform: translateY(10px);
 }
 
-/* line 227, ../scss/main.scss */
-nav.is-active .line:nth-child(3) {
+/* line 233, ../scss/main.scss */
+nav.is-active ~ .hamburger .line:nth-child(3) {
   -moz-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
   -webkit-transform: translateY(-10px);
@@ -335,7 +346,7 @@ nav.is-active .line:nth-child(3) {
 }
 
 /* ------------------------------ slides */
-/* line 233, ../scss/main.scss */
+/* line 239, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -356,12 +367,17 @@ nav.is-active .line:nth-child(3) {
   transform: translateX(100%);
 }
 
-/* line 246, ../scss/main.scss */
+/* line 252, ../scss/main.scss */
+.urlslide {
+  width: 90%;
+}
+
+/* line 255, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 247, ../scss/main.scss */
+/* line 256, ../scss/main.scss */
 .slide.visible {
   -moz-transform: translateX(0%);
   -ms-transform: translateX(0%);
@@ -369,7 +385,7 @@ nav.is-active .line:nth-child(3) {
   transform: translateX(0%);
 }
 
-/* line 250, ../scss/main.scss */
+/* line 259, ../scss/main.scss */
 nav.is-slided {
   -moz-transform: translateX(0%);
   -ms-transform: translateX(0%);
@@ -378,7 +394,7 @@ nav.is-slided {
   opacity: .8;
 }
 
-/* line 254, ../scss/main.scss */
+/* line 263, ../scss/main.scss */
 nav.is-slided:after {
   content: "";
   display: block;

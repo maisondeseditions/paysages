@@ -183,6 +183,12 @@ nav.is-active {
 .slide {
     padding: 30px 40px;
 }
+.urlslide{
+    padding: 0
+}
+.slide iframe {
+    height: 100%; width: 100%
+}
 ul { 
     list-style-type: none;
     margin: 0;
@@ -220,11 +226,11 @@ nav.is-active ~ .hamburger {
 nav.is-slided ~ .hamburger {
     right: calc(90% + 20px)
 }
-nav.is-active .line:nth-child(1){
+nav.is-active ~ .hamburger .line:nth-child(1){
   @include transform(translateY(10px));
 }
 
-nav.is-active .line:nth-child(3){
+nav.is-active ~ .hamburger .line:nth-child(3){
   @include transform(translateY(-10px));
 }
 
@@ -242,6 +248,9 @@ nav.is-active .line:nth-child(3){
     color: white;
     @include transition(all 0.3s ease-out);
     @include transform(translateX(100%));
+}
+.urlslide {
+    width: 90%;
 }
 .content { max-width: 600px; }
 .slide.visible{
