@@ -191,19 +191,21 @@
     }) 
 
     var lequel = Math.floor( Math.random() * $article.length);
-    $article.pep({
-        constrainTo: '#pep',       
-        //shouldEase:false,
-        //startThreshold:[20,20],
-        shouldPreventDefault:false,
-        useCSSTranslation: false,
-        allowDragEventPropagation:true
-    }) 
+    
     $article.each(function(idx){
         var $this = $(this);
         
 
-        if($this.hasClass('texte')){}
+        if($this.hasClass('texte')){
+            $this.pep({
+                constrainTo: '#pep',       
+                //shouldEase:false,
+                //startThreshold:[20,20],
+                // shouldPreventDefault:false,
+                // useCSSTranslation: false,
+                allowDragEventPropagation:false
+            }) 
+        }
         if(idx == lequel){
             $this.css({
                 'left': Math.floor( Math.random() * bodyWidth ) +'px',
