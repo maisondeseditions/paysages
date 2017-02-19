@@ -249,7 +249,7 @@ nav {
   width: 100%;
   left: 0;
   top: 0;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* line 189, ../scss/main.scss */
@@ -283,7 +283,7 @@ li {
 
 /* line 207, ../scss/main.scss */
 .menu a {
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
@@ -347,7 +347,7 @@ li {
   height: 100%;
   width: 90%;
   right: 0;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;

@@ -181,7 +181,7 @@ nav {
     width: 100%;
     left: 0;
     top: 0;
-    color: white;
+    color: rgba(255,255,255,.8);
     
 }
 nav {
@@ -204,7 +204,7 @@ ul {
 li {
     margin-bottom: .5em;
 }
-.menu a {color: white; text-decoration: none;}
+.menu a {color: rgba(255,255,255,.8); text-decoration: none;}
 .menu h1, 
 .menu h2 { margin: 0; }
 .hamburger {
@@ -269,7 +269,7 @@ li {
     height: 100%;
     width: 90%;
     right: 0;
-    color: white;
+    color: rgba(255,255,255,.8);
     @include transition(all 0.3s ease-out);
     left:100%
 }
