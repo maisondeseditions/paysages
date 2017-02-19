@@ -194,17 +194,17 @@
    
     $article.each(function(){
         var $this = $(this);
-        // $this.pep({
-        //     constrainTo: '#pep',       
-        //     easing:false,
-        //     allowDragEventPropagation:false
-        // }) 
-        //if (!$this.hasClass('related')) {
-            $this.css({
-                'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
-                'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
-            })
-        //}
+        if($this.hasClass('texte')){
+            $this.pep({
+                constrainTo: '#pep',       
+                easing:false,
+                allowDragEventPropagation:false
+            }) 
+        }
+        $this.css({
+            'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
+            'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
+        })
     })
 
 
