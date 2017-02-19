@@ -6,7 +6,8 @@
         $pep = $('#pep'),
         $home = $('#home'),
         $nav = $('nav'),
-        $article = $('article');
+        $article = $('article'),
+        $slide = $('.slide');
 
 
     $pep.imagesLoaded( function() {
@@ -27,10 +28,18 @@
     
 
 
-    var imgHeight = $('body').height() - 80;
-    $( window ).resize(function() {
-        imgHeight = $('body').height() - 80;
-    });
+    // calculate heights
+
+    var imgHeight = 0,
+        navHeight = 0, 
+        calculateHeights = function(){
+            navHeight = $body.outerHeight();
+            imgHeight = navHeight - 80;
+            $nav.height(navHeight);
+            $slide.height(navHeight);
+        };
+
+    $(window).on('resize', calculateHeights);
 
     var totop = function(el){
         
@@ -123,10 +132,10 @@
     $(".hamburger").click(function(){
         $nav.toggleClass("is-active");
         $nav.removeClass("is-slided");
-        $('.slide').removeClass("visible");
-
+        $slide.removeClass("visible");
         $body.toggleClass('locked');
     });
+
     $('.menu').on('click', 'a.slideto', function(e){
         e.stopPropagation();
         e.preventDefault();
@@ -137,7 +146,7 @@
 
     $nav.on('click', function(){
         if($nav.hasClass('is-slided')){        
-            $('.slide').removeClass('visible');
+            $slide.removeClass('visible');
             $nav.toggleClass("is-slided");
         }
     })
