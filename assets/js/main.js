@@ -198,13 +198,13 @@
     var lequel = Math.floor( Math.random() * $article.length)
     $article.each(function(idx){
         var $this = $(this);
-        if($this.hasClass('texte')){
+        
             $this.pep({
                 constrainTo: '#pep',       
                 easing:false,
                 allowDragEventPropagation:false
             }) 
-        }
+        if($this.hasClass('texte')){}
         if(idx == lequel){
             $this.css({
                 'left': Math.floor( Math.random() * bodyWidth ) +'px',
