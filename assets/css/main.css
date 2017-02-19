@@ -123,17 +123,7 @@ img {
 }
 
 /* ------------------------------ home */
-/* line 101, ../scss/main.scss */
-#header {
-  position: fixed;
-  z-index: 850;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* line 110, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 #home {
   background: #eee;
   display: -webkit-flex;
@@ -156,35 +146,35 @@ img {
   z-index: 900;
 }
 
-/* line 126, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 #home.invisible {
   opacity: 0;
 }
 
-/* line 129, ../scss/main.scss */
+/* line 122, ../scss/main.scss */
 h1, h2 {
   font-size: 1em;
   font-weight: normal;
 }
 
-/* line 133, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 h1 {
   font-weight: bold;
 }
 
-/* line 134, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 #home p {
   text-align: center;
   font-size: .75em;
 }
 
-/* line 139, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 .intro {
   position: relative;
   top: -1em;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 136, ../scss/main.scss */
 .loading, .loaded {
   opacity: 1;
   top: 0px;
@@ -196,7 +186,7 @@ h1 {
   width: 100%;
 }
 
-/* line 150, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 .loaded {
   opacity: 0;
   top: 20px;
@@ -207,195 +197,187 @@ h1 {
   transition: all 250ms ease-out 150ms;
 }
 
-/* line 155, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 .loading.invisible {
   opacity: 0;
   top: -5px;
 }
 
-/* line 159, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 .loaded.visible {
   opacity: 1;
   top: 0px;
 }
 
 /* ------------------------------ nav */
-/* line 167, ../scss/main.scss */
-nav {
+/* line 161, ../scss/main.scss */
+#header {
   position: fixed;
-  z-index: 650;
-  background: black;
-  height: 100%;
-  width: 90%;
-  right: 0;
+  z-index: 850;
   top: 0;
-  color: white;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 100%;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
 }
 
-/* line 179, ../scss/main.scss */
-nav.is-active {
-  -moz-transform: translateX(45%);
-  -ms-transform: translateX(45%);
-  -webkit-transform: translateX(45%);
-  transform: translateX(45%);
+/* line 171, ../scss/main.scss */
+#header.is-active {
+  left: 50%;
 }
 
-/* line 182, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
+nav {
+  position: absolute;
+  z-index: 650;
+  background: black;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+}
+
+/* line 188, ../scss/main.scss */
 .menu,
 .slide {
   padding: 30px 40px;
 }
 
-/* line 186, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 .urlslide {
   padding: 0;
 }
 
-/* line 189, ../scss/main.scss */
+/* line 195, ../scss/main.scss */
 .slide iframe {
   height: 100%;
   width: 100%;
 }
 
-/* line 192, ../scss/main.scss */
+/* line 198, ../scss/main.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 197, ../scss/main.scss */
+/* line 203, ../scss/main.scss */
 li {
   margin-bottom: .5em;
 }
 
-/* line 200, ../scss/main.scss */
+/* line 206, ../scss/main.scss */
 .menu a {
   color: white;
   text-decoration: none;
 }
 
-/* line 201, ../scss/main.scss */
+/* line 207, ../scss/main.scss */
 .menu h1,
 .menu h2 {
   margin: 0;
 }
 
-/* line 203, ../scss/main.scss */
+/* line 209, ../scss/main.scss */
 .hamburger {
   z-index: 650;
-  position: fixed;
-  right: 20px;
+  position: absolute;
+  left: -60px;
   top: 20px;
-  -moz-transition: all 0.25s ease-out;
-  -o-transition: all 0.25s ease-out;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
 }
 
-/* line 210, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
   background-color: black;
   display: block;
   margin: 8px auto;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
 }
 
-/* line 219, ../scss/main.scss */
+/* line 224, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 223, ../scss/main.scss */
-nav.is-active ~ .hamburger {
-  right: calc(50% + 20px);
+/* line 243, ../scss/main.scss */
+#header.is-active .line:nth-child(2) {
+  opacity: 0;
 }
 
-/* line 226, ../scss/main.scss */
-nav.is-slided ~ .hamburger {
-  right: calc(90% + 20px);
+/* line 247, ../scss/main.scss */
+#header.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(45deg);
+  -ms-transform: translateY(10px) rotate(45deg);
+  -o-transform: translateY(10px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 
-/* line 229, ../scss/main.scss */
-nav.is-active ~ .hamburger .line:nth-child(1) {
-  -moz-transform: translateY(10px);
-  -ms-transform: translateY(10px);
-  -webkit-transform: translateY(10px);
-  transform: translateY(10px);
-}
-
-/* line 233, ../scss/main.scss */
-nav.is-active ~ .hamburger .line:nth-child(3) {
-  -moz-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
+/* line 254, ../scss/main.scss */
+#header.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  -o-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* ------------------------------ slides */
-/* line 239, ../scss/main.scss */
+/* line 262, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  position: fixed;
+  position: absolute;
   z-index: 850;
   background: black;
   height: 100%;
-  width: 75%;
+  width: 90%;
   right: 0;
   color: white;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+  left: 100%;
 }
 
-/* line 252, ../scss/main.scss */
+/* line 275, ../scss/main.scss */
 .urlslide {
-  width: 90%;
+  width: calc(100% - 20px);
 }
 
-/* line 255, ../scss/main.scss */
+/* line 278, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 256, ../scss/main.scss */
+/* line 279, ../scss/main.scss */
 .slide.visible {
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
+  left: 10%;
 }
 
-/* line 259, ../scss/main.scss */
-nav.is-slided {
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
+/* line 282, ../scss/main.scss */
+.urlslide.visible {
+  left: 20px;
+}
+
+/* line 285, ../scss/main.scss */
+#header.is-slided {
+  left: 10%;
+}
+
+/* line 286, ../scss/main.scss */
+#header.is-slided nav {
+  left: 0;
   opacity: .8;
 }
 
-/* line 263, ../scss/main.scss */
-nav.is-slided:after {
+/* line 290, ../scss/main.scss */
+#header.is-slided nav:after {
   content: "";
   display: block;
   position: absolute;

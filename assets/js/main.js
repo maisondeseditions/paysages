@@ -7,6 +7,7 @@
         $home = $('#home'),
         $nav = $('nav'),
         $article = $('article'),
+        $header = $('#header'),
         $slide = $('.slide');
 
 
@@ -39,10 +40,8 @@
             $nav.height(bodyHeight);
             $home.height(bodyHeight);
             $home.width(bodyWidth);
-            $('#header').height(bodyHeight);
-            $('#header').width(bodyWidth);
-            $body.height(bodyHeight);
-            $body.width(bodyWidth);
+            $header.height(bodyHeight);
+            $header.width(bodyWidth);
             $slide.height(bodyHeight);
         };
 
@@ -143,8 +142,8 @@
     });
 
     $(".hamburger").click(function(){
-        $nav.toggleClass("is-active");
-        $nav.removeClass("is-slided");
+        $header.toggleClass("is-active");
+        $header.removeClass("is-slided");
         $slide.removeClass("visible");
         $body.toggleClass('locked');
     });
@@ -154,7 +153,7 @@
         e.preventDefault();
         $target= $( $(this).attr('href'));
         $target.addClass('visible');
-        $nav.toggleClass("is-slided");
+        $header.toggleClass("is-slided");
     })
 
     $('.menu').on('click', 'a.showurl', function(e){
@@ -165,14 +164,14 @@
         $iframe = $('<iframe src="' + _url + '" frameborder="0"></iframe>');
         $target.html($iframe);
         $target.addClass('visible url-visible');
-        $nav.toggleClass("is-slided url-slided");
+        $header.toggleClass("is-slided url-slided");
     })
 
     $nav.on('click', function(){
-        if($nav.hasClass('is-slided')){  
+        if($header.hasClass('is-slided')){  
             $('iframe').remove();
             $slide.removeClass('visible url-visible');
-            $nav.removeClass("is-slided url-slided");
+            $header.removeClass("is-slided url-slided");
         }
     })
 

@@ -98,14 +98,7 @@ img {
 
 
 /* ------------------------------ home */
-#header{
-    position: fixed;
-    z-index: 850;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-} 
+
 
 #home {
     background: #eee;
@@ -164,20 +157,33 @@ h1 { font-weight: bold; }
 
 
 /* ------------------------------ nav */
-nav {
+
+#header{
     position: fixed;
+    z-index: 850;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left:100%;
+    @include transition(all 0.3s ease-out);
+} 
+#header.is-active{
+    left:50%;  
+}
+
+nav {
+    position: absolute;
     z-index: 650;
     background: black;
     height: 100%;
-    width: 90%;
-    right: 0;
+    width: 100%;
+    left: 0;
     top: 0;
     color: white;
-    @include transition(all 0.3s ease-out);
-    @include transform(translateX(100%));
+    
 }
-nav.is-active {
-    @include transform(translateX(45%));
+nav {
 }
 .menu,
 .slide {
@@ -202,10 +208,9 @@ li {
 .menu h2 { margin: 0; }
 .hamburger {
     z-index: 650;
-    position: fixed;
-    right: 20px;
+    position: absolute;
+    left: -60px;
     top: 20px;
-    @include transition(all 0.25s ease-out);
 }
 .hamburger .line{
   width: 35px;
@@ -213,54 +218,76 @@ li {
   background-color: black;
   display: block;
   margin: 8px auto;
-  @include transition(all 0.3s ease-out);
+  // @include transition(all 0.3s ease-out);
 }
 
 .hamburger:hover{
   cursor: pointer;
 }
 
-nav.is-active ~ .hamburger {
-    right: calc(50% + 20px)
-}
-nav.is-slided ~ .hamburger {
-    right: calc(90% + 20px)
-}
-nav.is-active ~ .hamburger .line:nth-child(1){
-  @include transform(translateY(10px));
+// nav.is-active ~ .hamburger {
+//     right: calc(50% + 20px)
+// }
+// nav.is-slided ~ .hamburger {
+//     right: calc(90% + 20px)
+// }
+// nav.is-active ~ .hamburger .line:nth-child(1){
+//   @include transform(translateY(10px));
+// }
+
+// nav.is-active ~ .hamburger .line:nth-child(3){
+//   @include transform(translateY(-10px));
+// }
+
+
+#header.is-active .line:nth-child(2){
+  opacity: 0;
 }
 
-nav.is-active ~ .hamburger .line:nth-child(3){
-  @include transform(translateY(-10px));
+#header.is-active .line:nth-child(1){
+  -webkit-transform: translateY(10px) rotate(45deg);
+  -ms-transform: translateY(10px) rotate(45deg);
+  -o-transform: translateY(10px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 
+#header.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  -o-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+}
 
 /* ------------------------------ slides */
 .slide {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    position: fixed;
+    position: absolute;
     z-index: 850;
     background: black;
     height: 100%;
-    width: 75%;
+    width: 90%;
     right: 0;
     color: white;
     @include transition(all 0.3s ease-out);
-    @include transform(translateX(100%));
+    left:100%
 }
 .urlslide {
-    width: 90%;
+    width: calc(100% - 20px);
 }
 .content { max-width: 600px; }
 .slide.visible{
-    @include transform(translateX(0%));
+    left:10%
 }
-nav.is-slided {
-    @include transform(translateX(0%));   
+.urlslide.visible{
+    left:20px
+}
+#header.is-slided { left:10% }
+#header.is-slided nav{
+    left:0;
     opacity: .8;
 }
-nav.is-slided:after {
+#header.is-slided nav:after {
     content: "";
     display: block;
     position: absolute;
