@@ -90,7 +90,8 @@ img {
 
 /* ------------------------------ home */
 #header{
-    position: absolute;
+    position: fixed;
+    z-index: 850;
     top: 0;
     left: 0;
     width: 100%;
