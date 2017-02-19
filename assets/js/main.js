@@ -116,78 +116,7 @@
         
     }
 
-    $home.on('click', function() {
-        if(imgLoaded){
-            $home.addClass('invisible');
-            setTimeout(function(){
-                $home.css('z-index',-1)
-            }, 300)
-            setTimeout(function() {                
-                $('.pep').addClass('visible');
-                // $('html').velocity('scroll', {
-                //     duration: 500,
-                //      offset: "450px",
-                //     easing: 'easeOutCubic'
-                // });
-                
-            }, 500)
-        }
-    });
-
-    $(".hamburger").click(function(){
-        $nav.toggleClass("is-active");
-        $nav.removeClass("is-slided");
-        $slide.removeClass("visible");
-        $body.toggleClass('locked');
-    });
-
-    $('.menu').on('click', 'a.slideto', function(e){
-        e.stopPropagation();
-        e.preventDefault();
-        $target= $( $(this).attr('href'));
-        $target.addClass('visible');
-        $nav.toggleClass("is-slided");
-    })
-
-    $nav.on('click', function(){
-        if($nav.hasClass('is-slided')){        
-            $slide.removeClass('visible');
-            $nav.toggleClass("is-slided");
-        }
-    })
-
-    $article.on('tap click', function(e) {
-        e.stopPropagation();
-        totop(this);
-    })
-
-
-    var canvas = {
-        width:$article.length * 80,
-        height:$article.length * 80 
-    }      
-
-    
-    $pep.css({
-        'width': canvas.width + $('body').width() + 'px',
-        'height': canvas.height + 'px'
-    }) 
-
    
-    $article.each(function(){
-        var $this = $(this);
-        if($this.hasClass('texte')){
-            $this.pep({
-                constrainTo: '#pep',       
-                easing:false,
-                allowDragEventPropagation:false
-            }) 
-        }
-        $this.css({
-            'left': Math.floor( Math.random() * (canvas.width  - $this.width()) ) +'px',
-            'top': Math.floor( Math.random() * (canvas.height  - $this.height()) ) +'px'
-        })
-    })
 
 
 })(jQuery);
