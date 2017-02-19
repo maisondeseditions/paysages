@@ -43,6 +43,13 @@
             $header.height(bodyHeight);
             $header.width(bodyWidth);
             $slide.height(bodyHeight);
+            $('#mystyle').remove();
+            var mystyle = '<style id="mystyle" type="text/css">';
+            mystyle += '#header { width:' + bodyWidth + 'px; left:' + bodyWidth + 'px; } ';
+            mystyle += '#header.is-active { left:' + bodyWidth / 2 + 'px; } ';
+            mystyle += '#header.is-slided { left:' + bodyWidth / 10 + 'px; }';
+            mystyle += '</style>';
+            $('head').append(mystyle);
         };
 
     $(window).on('resize', calculateHeights);

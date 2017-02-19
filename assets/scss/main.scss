@@ -163,14 +163,13 @@ h1 { font-weight: bold; }
     z-index: 850;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
     left:100%;
     @include transition(all 0.3s ease-out);
 } 
-#header.is-active{
-    left:50%;  
-}
+#header { width: 100%; }
+#header.is-active{ left:50%; }
+#header.is-slided { left:10% }
 
 nav {
     position: absolute;
@@ -272,17 +271,16 @@ li {
     @include transition(all 0.3s ease-out);
     left:100%
 }
-.urlslide {
-    width: calc(100% - 20px);
-}
+.urlslide { width: calc(100% - 20px); }
 .content { max-width: 600px; }
+
 .slide.visible{
     left:10%
 }
 .urlslide.visible{
     left:20px
 }
-#header.is-slided { left:10% }
+
 #header.is-slided nav{
     left:0;
     opacity: .8;
