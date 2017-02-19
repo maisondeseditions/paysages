@@ -48,7 +48,7 @@
 
         
         
-        $el.css('z-index', 200)    
+        
 
         // if has image
         var $img = $el.find('img').first();
@@ -122,7 +122,9 @@
         // );
 
         // reset others
-        $article.css('z-index', 0)
+        $article.css('z-index', 0);
+        $el.css('z-index', 200);
+        
         $('img.big').not($img).each(function(){
             $(this).removeClass('big');
             $(this).next().remove();
