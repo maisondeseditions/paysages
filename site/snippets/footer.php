@@ -4,9 +4,10 @@
   <?= js('assets/js/jquery.tap.js') ?>
   <?= js('assets/js/imagesloaded.pkgd.min.js') ?>
   <?= js('assets/js/jquery.easing.js') ?>
+  <?= js('assets/js/packery.pkgd.min.js') ?>
 
   <?= js('assets/js/velocity.min.js') ?>
-  <?= js('assets/js/main.js') ?>
+  <?= js('assets/js/main2.js') ?>
 
 </body>
 </html>

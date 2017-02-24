@@ -54,8 +54,7 @@ body.locked {
 
 /* line 48, ../scss/main.scss */
 .pep {
-  width: 1000px;
-  height: 1000px;
+  width: calc(100% - 60px);
   opacity: 0;
   -moz-transition: opacity 250ms ease-out;
   -o-transition: opacity 250ms ease-out;
@@ -63,50 +62,55 @@ body.locked {
   transition: opacity 250ms ease-out;
 }
 
-/* line 54, ../scss/main.scss */
+/* line 53, ../scss/main.scss */
 .pep.visible {
   opacity: 1;
 }
 
 /* ------------------------------ articles */
-/* line 58, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 article {
   position: absolute;
   cursor: move;
 }
 
-/* line 62, ../scss/main.scss */
+/* line 61, ../scss/main.scss */
+.big {
+  width: 100%;
+}
+
+/* line 64, ../scss/main.scss */
 .texte {
   width: 420px;
   max-width: calc(100vw - 80px);
 }
 
-/* line 66, ../scss/main.scss */
+/* line 68, ../scss/main.scss */
 .image, .document {
   background: linear-gradient(#eaeaea, #dddddd);
 }
 
-/* line 69, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 img {
   display: block;
   opacity: .8;
 }
 
-/* line 73, ../scss/main.scss */
+/* line 75, ../scss/main.scss */
 .image img:nth-child(2) {
   position: absolute;
   width: 100%;
   top: 0;
 }
 
-/* line 79, ../scss/main.scss */
+/* line 81, ../scss/main.scss */
 .document img:nth-child(2) {
   position: absolute;
   width: 100%;
   top: 0;
 }
 
-/* line 84, ../scss/main.scss */
+/* line 86, ../scss/main.scss */
 .document {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
@@ -115,7 +119,7 @@ img {
   -ms-filter: grayscale(1);
 }
 
-/* line 92, ../scss/main.scss */
+/* line 94, ../scss/main.scss */
 .image {
   filter: grayscale(0.7);
   -webkit-filter: grayscale(0.7);
@@ -125,7 +129,7 @@ img {
 }
 
 /* ------------------------------ home */
-/* line 106, ../scss/main.scss */
+/* line 108, ../scss/main.scss */
 #home {
   background: #eee;
   display: -webkit-flex;
@@ -148,35 +152,35 @@ img {
   z-index: 900;
 }
 
-/* line 122, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 #home.invisible {
   opacity: 0;
 }
 
-/* line 125, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 h1, h2 {
   font-size: 1em;
   font-weight: normal;
 }
 
-/* line 129, ../scss/main.scss */
+/* line 131, ../scss/main.scss */
 h1 {
   font-weight: bold;
 }
 
-/* line 130, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 #home p {
   text-align: center;
   font-size: .75em;
 }
 
-/* line 135, ../scss/main.scss */
+/* line 137, ../scss/main.scss */
 .intro {
   position: relative;
   top: -1em;
 }
 
-/* line 139, ../scss/main.scss */
+/* line 141, ../scss/main.scss */
 .loading, .loaded {
   opacity: 1;
   top: 0px;
@@ -188,7 +192,7 @@ h1 {
   width: 100%;
 }
 
-/* line 146, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 .loaded {
   opacity: 0;
   top: 20px;
@@ -199,20 +203,20 @@ h1 {
   transition: all 250ms ease-out 150ms;
 }
 
-/* line 151, ../scss/main.scss */
+/* line 153, ../scss/main.scss */
 .loading.invisible {
   opacity: 0;
   top: -5px;
 }
 
-/* line 155, ../scss/main.scss */
+/* line 157, ../scss/main.scss */
 .loaded.visible {
   opacity: 1;
   top: 0px;
 }
 
 /* ------------------------------ nav */
-/* line 164, ../scss/main.scss */
+/* line 166, ../scss/main.scss */
 #header {
   position: fixed;
   z-index: 850;
@@ -226,22 +230,22 @@ h1 {
   transition: all 0.3s ease-out;
 }
 
-/* line 173, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #header {
   width: 100%;
 }
 
-/* line 174, ../scss/main.scss */
+/* line 176, ../scss/main.scss */
 #header.is-active {
   left: 50%;
 }
 
-/* line 175, ../scss/main.scss */
+/* line 177, ../scss/main.scss */
 #header.is-slided {
   left: 10%;
 }
 
-/* line 177, ../scss/main.scss */
+/* line 179, ../scss/main.scss */
 nav {
   position: absolute;
   z-index: 650;
@@ -253,48 +257,48 @@ nav {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 190, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 .menu,
 .slide {
   padding: 30px 40px;
 }
 
-/* line 194, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .urlslide {
   padding: 0;
 }
 
-/* line 197, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .slide iframe {
   height: 100%;
   width: 100%;
 }
 
-/* line 200, ../scss/main.scss */
+/* line 202, ../scss/main.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 205, ../scss/main.scss */
+/* line 207, ../scss/main.scss */
 li, p, h1, h2 {
   margin: .65em 0;
 }
 
-/* line 208, ../scss/main.scss */
+/* line 210, ../scss/main.scss */
 .menu a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
-/* line 209, ../scss/main.scss */
+/* line 211, ../scss/main.scss */
 .menu h1,
 .menu h2 {
   margin: 0;
 }
 
-/* line 211, ../scss/main.scss */
+/* line 213, ../scss/main.scss */
 .hamburger {
   z-index: 650;
   position: absolute;
@@ -302,7 +306,7 @@ li, p, h1, h2 {
   top: 20px;
 }
 
-/* line 217, ../scss/main.scss */
+/* line 219, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -311,17 +315,17 @@ li, p, h1, h2 {
   margin: 8px auto;
 }
 
-/* line 226, ../scss/main.scss */
+/* line 228, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 245, ../scss/main.scss */
+/* line 247, ../scss/main.scss */
 #header.is-active .line:nth-child(2) {
   opacity: 0;
 }
 
-/* line 249, ../scss/main.scss */
+/* line 251, ../scss/main.scss */
 #header.is-active .line:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(45deg);
   -ms-transform: translateY(10px) rotate(45deg);
@@ -329,7 +333,7 @@ li, p, h1, h2 {
   transform: translateY(10px) rotate(45deg);
 }
 
-/* line 256, ../scss/main.scss */
+/* line 258, ../scss/main.scss */
 #header.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-10px) rotate(-45deg);
   -ms-transform: translateY(-10px) rotate(-45deg);
@@ -338,7 +342,7 @@ li, p, h1, h2 {
 }
 
 /* ------------------------------ slides */
-/* line 264, ../scss/main.scss */
+/* line 266, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -356,33 +360,33 @@ li, p, h1, h2 {
   left: 100%;
 }
 
-/* line 277, ../scss/main.scss */
+/* line 279, ../scss/main.scss */
 .urlslide {
   width: calc(90% - 20px);
 }
 
-/* line 278, ../scss/main.scss */
+/* line 280, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 280, ../scss/main.scss */
+/* line 282, ../scss/main.scss */
 .slide.visible {
   left: 10%;
 }
 
-/* line 283, ../scss/main.scss */
+/* line 285, ../scss/main.scss */
 .urlslide.visible {
   left: 20px;
 }
 
-/* line 287, ../scss/main.scss */
+/* line 289, ../scss/main.scss */
 #header.is-slided nav {
   left: 0;
   opacity: .8;
 }
 
-/* line 291, ../scss/main.scss */
+/* line 293, ../scss/main.scss */
 #header.is-slided nav:after {
   content: "";
   display: block;

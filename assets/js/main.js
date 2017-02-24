@@ -180,20 +180,111 @@
 
 
     var canvas = {
-        width:$article.length * 80,
-        height:$article.length * 80 
+        width:$article.length * 100,
+        height:$article.length * 100 
     }      
 
-    console.log(canvas)
     $pep.css({
         'width': canvas.width + 'px',
         'height': canvas.height + 'px'
     }) 
 
     var lequel = Math.floor( Math.random() * $article.length);
-    
+
+    var positions = {
+
+        zoneinterdite : [],
+        getX : function(){
+            return Math.floor( Math.random() * (canvas.width - 400) );
+        },
+        getY : function(){
+            return Math.floor( Math.random() * (canvas.height - 400) );
+        },
+        checkOverlapping : function(box1,box2){
+
+            var x1 = box1.left
+            var y1 = box2.top;
+            var h1 = box1.height;
+            var w1 = box1.width;
+            var b1 = y1 + h1;
+            var r1 = x1 + w1;
+            var x2 = box1.left;
+            var y2 = box1.top;
+            var h2 = box1.height;
+            var w2 = box1.width;
+            var b2 = y2 + h2;
+            var r2 = x2 + w2;
+
+            var buf = 24;
+
+            if (b1 + buf < y2 || y1 > b2 + buf || r1 + buf < x2 || x1 > r2 + buf) return false;
+            return true;
+
+            // for(var i = 0; i< positions.zoneinterdite.length; i++){
+            //     var pos = positions.zoneinterdite[i];
+            //     if ( x > pos.x && x < pos.x + pos.w ){
+            //         console.log('x failed :', x, pos.x, pos.x + pos.w)
+            //         return false;
+            //     } 
+            //     if(y > pos.y && y < pos.y + pos.h) {
+            //         console.log('y failed :',y, pos.y, pos.y + pos.h)
+            //         return false;
+            //     } 
+                
+            //     return true;
+                
+            // }
+        }
+    }
+    console.log($article.length, canvas)
+
     $article.each(function(idx){
+
         var $this = $(this);
+        var conflict = true;
+        var toomuch = 0;
+        var box;
+        while (conflict) {
+            toomuch++;
+           
+            box = {
+                left:positions.getX(),
+                top:positions.getY(),
+                width:$this.width(),
+                height:parseInt($this.find('img').attr('height')) || $this.height()
+            }
+
+            // conflict = false;
+            for (var i = 0; i < positions.zoneinterdite.length; i++) {
+                if (positions.checkOverlapping(box, positions.zoneinterdite[i])) {
+                    console.log(box, positions.zoneinterdite[i])
+                    conflict = false;                 
+                    // break;
+                } else {
+                    conflict = true;
+                }
+            }
+
+            if(toomuch==20){
+                $this.css('border', '10px solid red')
+                break;
+            }
+            
+
+        }
+        positions.zoneinterdite.push(box);
+
+        $this.css({
+            'left': box.left +'px',
+            'top': box.top +'px'
+        })
+
+        if(idx == lequel){
+            $this.css({
+                'left': Math.floor( Math.random() * bodyWidth ) +'px',
+                'top': Math.floor( (bodyHeight - 40) -  Math.random() * 180 ) +'px'
+            })
+        } 
         
 
         if($this.hasClass('texte')){
@@ -201,18 +292,6 @@
                 constrainTo: '#pep',       
                 allowDragEventPropagation:false
             }) 
-        }
-
-        if(idx == lequel){
-            $this.css({
-                'left': Math.floor( Math.random() * bodyWidth ) +'px',
-                'top': Math.floor( bodyHeight -  Math.random() * 180 ) +'px'
-            })
-        } else {
-            $this.css({
-                'left': Math.floor( Math.random() * (canvas.width - 400) ) +'px',
-                'top': Math.floor( Math.random() * (canvas.height - 400) ) +'px'
-            })
         }
         
     })
