@@ -18,17 +18,20 @@
         }
 
         $article.each(function(){
-            var $this = $(this);
+            var $this = $(this),
+                pdl = Math.floor( Math.random() * 150) + 20;
+            $this.data('pdl', pdl);
             $this.css({
                 marginTop: Math.floor( Math.random() * 550) + 50,
                 marginBottom: Math.floor( Math.random() * 150) + 50,
-                marginLeft: Math.floor( Math.random() * 150) + 20
+                paddingLeft: pdl
             })
         })
 
 
         $pep.packery({
           // options
+          transitionDuration:0,
           itemSelector: 'article',
           gutter: 10
         });
@@ -85,69 +88,68 @@
         var $img = $el.find('img').first();
 
         if($img.length){
-            $next = $img.next();
-                
+            
             if ($el.hasClass('big')){
                 $el.removeClass('big');
-                $next.attr('src', $next.data('src'));
-                // $img.animate({
-                //     'height':$img.attr('height'),
-                //     'opacity':.8
-                // }, 350);                    
+                $img.attr('src', $img.data('thumb'));      
+                $el.velocity({'padding-left':$el.data('pdl')}, {
+                    duration: 150,
+                    easing: 'ease-out'
+                });
+
             } else {
                 $el.addClass('big');
-                // $img.animate({
-                //     'height':imgHeight,
-                //     'opacity':1
-                // }, 350);   
-                $next.attr('src', $img.data('source'));                
+                $img.attr('src', $img.data('source'));                
             }
         }
+        
+        // reset other
+        $('.big').not($el).each(function(){
+            var $this = $(this),
+                $img = $this.find('img').first();
+
+            if($img.length){
+                $img.attr('src', $img.data('thumb'));
+                $this.removeClass('big');
+            }
+            $this.velocity({'padding-left':$this.data('pdl')}, {
+                duration: 150,
+                easing: 'ease-out'
+            });
+        })
 
         
 
         // call related
+        var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
+        
+        for (var i = 0; i < related.length; i++) {
+            if(related[i] != ''){
+                var $r = $( '#'+related[i] );
+                $el.after($r);
+            }
+        }
+
+        $pep.packery();
+
         var s = setTimeout(function () {
             
-            var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
-            
-            for (var i = 0; i < related.length; i++) {
-                if(related[i] != ''){
-                    var $r = $( '#'+related[i] );
-                    $el.after($r);
-                    // $r.velocity({
-                    //     'left':parseInt($el.css('left')) + $el.width() + 40 + Math.floor( Math.random() * 150 ),
-                    //     'top':parseInt($el.css('top')) + i * 80 
-                    // }, 600, 'easeOutQuad');
-                    // $r.css('z-index', 100);
-                }
-            }
-            $pep.packery({
-                transitionDuration:0
+            $el.velocity({'padding-left':40}, {
+                duration: 150,
+                easing: 'ease-out'
             });
-
-
-        }, 500)
-        
-        
-        // var o = {
-        //     top: parseInt($el.css('top'))  - 40,
-        //     left: parseInt($el.css('left')) - 40
-        // };
-        
-        // $('#pepwrapper').animate({
-        //     'scrollLeft':  o.left,
-        //     'scrollTop':  o.top
-        // }, 500 );
-
-        // reset others
-
-        $('.big').not($el).each(function(){
-            var $next = $(this).find('nth-child(2)');
-            $next.attr('src', $next.data('src'));
+            $el.velocity('scroll', {
+                duration: 500,
+                offset: -40,
+                easing: 'ease-out'
+            });
             
-            $(this).removeClass('big');
-        })
+        }, 500)
+            
+
+
+
+        
 
         
     }
@@ -204,21 +206,6 @@
         totop(this);
     })
 
-    // var ul = document.querySelector("#pep"), // get the list
-    // temp = ul.cloneNode(true); // clone the list
-
-    // // shuffle the cloned list (better performance)
-    // for (var i = temp.children.length + 1; i--; )
-    //     temp.appendChild( temp.children[Math.random() * i |0] );
-
-    // ul.parentNode.replaceChild(temp, ul); // copy shuffled back to 'ul'
-
-
-
-
-
-
-    
 
     
 

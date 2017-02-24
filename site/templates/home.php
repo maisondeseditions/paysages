@@ -1,5 +1,4 @@
 <?php snippet('header') ?>
-    <div id="pepwrapper">
     <div class="pep" id="pep">
 
     <?php 
@@ -20,8 +19,7 @@
         data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
         >
       <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
-            <img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>' />
-            <img src="<?= url('assets/img/pix.png')  ?>" data-src="<?= url('assets/img/pix.png')  ?>">
+            <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' /></span>
       <?php endif ?>
       </article>
     <?php endforeach ?>
@@ -33,8 +31,7 @@
         data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
         >
       <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
-            <img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>' />
-            <img src="<?= url('assets/img/pix.png')  ?>" data-src="<?= url('assets/img/pix.png')  ?>">
+            <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' /></span>
       <?php endif ?>
       
       </article>
@@ -45,6 +42,5 @@
 
     </div>
 
-  </div>
 
 <?php snippet('footer') ?>
