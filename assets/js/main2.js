@@ -204,6 +204,7 @@
 
         occupied_space = $clone.find('img').width() + 80 || 480;
         available_space = $window.width() - 80 - occupied_space;
+        alert(available_space + ' / ' + occupied_space)
         
         $relzone.css({
             'width':available_space,
