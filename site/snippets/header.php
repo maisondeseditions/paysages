@@ -12,7 +12,7 @@
         <link rel="manifest" href="<?= url('assets/manifest.json')?>">
         <!-- Android: Chrome M31 and up, ignored if manifest is present-->
         <meta name="mobile-web-app-capable" content="yes">
-        <link rel="icon" sizes="192x192" href="<?= url('assets/icon-192x192.png')?>">
+        <link rel="icon" sizes="192x192" href="<?= url('assets/img/icon-192x192.png')?>">
         <!-- iOS -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-title" content="<?= $site->title()->html() ?>">
@@ -32,7 +32,7 @@
     <body class="">
         
         <header id="header">
-        <nav class="">
+        <nav id="nav">
             <div class="menu">
                 <h2>Clémentine Fort</h2>
                 <h1>Paysages domestiques</h1>
