@@ -21,12 +21,11 @@
       <?php $thumb = $p->images()->sortBy('sort', 'asc')->first()->resize(600, 600); ?>
       <article class="item video <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
-        data-videosrc="<?php $image = $p->videos()->sortBy('sort', 'asc')->first()->url() ?>"
+        data-videosrc="<?php echo($p->videos()->first()->url()) ?>"
         data-poster="<?= $thumb->url() ?>"
         >
             <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' />
             </span>
-      video
       </article>
     <?php endforeach ?>
 

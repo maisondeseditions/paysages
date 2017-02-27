@@ -171,8 +171,9 @@
         });
 
         if($el.hasClass('video')){
-            $vid = $('<video src="' + $el.attr('data-videosrc') + '" autoplay poster="' + $el.attr('data-poster') + '"')
-            $clone.after($vid);
+
+            $vid = $('<video src="' + $el.attr('data-videosrc') + '" controls  poster="' + $el.attr('data-poster') + '" ></video>');
+            $clone.append($vid);
         }
         
         

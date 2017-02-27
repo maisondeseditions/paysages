@@ -127,7 +127,9 @@ img {
     // -o-filter: grayscale(.7);
     // -ms-filter: grayscale(.7);
 }
-
+.video.clone span {
+    display: none;
+}
 
 #clonezone {
     z-index: 2;
