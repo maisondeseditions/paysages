@@ -15,7 +15,7 @@
     <?php 
       $pagevideo = page('paysages/video')->children()->visible();
       foreach ($pagevideo as $p): ?>
-      <?php $thumb = $p->images()->sortBy('sort', 'asc')->first()->resize(1280, 720); ?>
+      <?php $thumb = $p->images()->sortBy('sort', 'asc')->first()->resize(600, 600); ?>
       <article class="item video <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure()->limit(3) as $r): ?><?= $r ?> <?php endforeach ?>"
         data-videosrc="<?php echo($p->videos()->first()->url()) ?>"
@@ -34,7 +34,7 @@
       <article class="item image <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure()->limit(3) as $r): ?><?= $r ?> <?php endforeach ?>"
         >
-      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(1280, 720); ?>
+      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
             <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' />
             </span>
       <?php endif ?>
@@ -47,13 +47,14 @@
       <article class="item document" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure()->limit(3) as $r): ?><?= $r ?> <?php endforeach ?>"
         >
-      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(1280, 720); ?>
+      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
             <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' /></span>
       <?php endif ?>
       
       </article>
     <?php endforeach ?>
 
+      <?php snippet('cache') ?>
     
 
     </div>
