@@ -32,6 +32,7 @@
     <body class="">
         
         <header id="header">
+
         <nav id="nav">
             <div class="menu">
                 <?php snippet('menu') ?>
@@ -58,12 +59,16 @@
         <?php endif ?>
         <?php endforeach ?>
         </header>
+        <div id="overlay"></div>
 
         
         <div id="home">
             <div>
                 <h2>Clémentine Fort</h2>
                 <h1>Paysages domestiques</h1>
+                <p>
+                —<br><br> </p>
+                <p>Compagnon numérique de l’exposition à la Maison de la Montagne</p>
                 <p>
                 —<br><br> </p>
                 <div class="intro">

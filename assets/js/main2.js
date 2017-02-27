@@ -16,6 +16,7 @@
 
 
 
+
     /* ------------------------------------------------- Init positions
     ---------------------------------------------------- */
 
@@ -33,6 +34,7 @@
     $pep.imagesLoaded( function() {
 
         imgLoaded = true;        
+        window.scrollTo(0, 0);
 
         $article.each(function(){
             var $this = $(this),
@@ -123,7 +125,7 @@
             complete: function(elements) { 
                 setTimeout(function(){
                     $el.addClass('out');
-                    $body.removeClass('locked');
+                    $body.removeClass(' related');
                     $pep.removeClass('related');
                 }, 150)
             }
@@ -145,7 +147,7 @@
         
         $relzone.empty();
         $pep.addClass('related');
-        $body.addClass('locked');
+        $body.addClass(' related');
         $article.removeClass('hidden');
         
         $clone = $el.clone();
