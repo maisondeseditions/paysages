@@ -19,19 +19,29 @@
     /* ------------------------------------------------- Init positions
     ---------------------------------------------------- */
 
+    var ul = $pep[0];
+    for (var i = ul.children.length; i >= 0; i--) {
+        ul.appendChild(ul.children[Math.random() * i | 0]);      
+        if(i == 1)  {
+            var $vid = $('.video').first();
+            var $videoclone = $vid.clone();
+            $pep.find(" > :nth-child(1)").before( $videoclone );
+            $pep.find(" > :nth-child(3)").before( $videoclone );
+            $pep.find(" > :nth-child(6)").before( $videoclone );
+            $pep.find(" > :nth-child(4)").before( $videoclone );
+        }
+    }
+
     $pep.imagesLoaded( function() {
 
-        imgLoaded = true;
+        imgLoaded = true;        
 
-
-        var ul = $pep[0];
-        for (var i = ul.children.length; i >= 0; i--) {
-            ul.appendChild(ul.children[Math.random() * i | 0]);        
-        }
+        
+        
 
         $article.each(function(){
             var $this = $(this),
-                pdl = $this.hasClass('texte') ? 0 : Math.floor( Math.random() * 150) + 20;
+                pdl = $this.hasClass('texte') ? 40 : Math.floor( Math.random() * 150) + 20;
             $this.attr('data-pdl', pdl);
             $this.css({
                 paddingTop: Math.floor( Math.random() * 550) + 50,
@@ -65,7 +75,7 @@
         bodyHeight = 0, 
         bodyWidth = 0, 
         calculateHeights = function(){
-            
+
             bodyHeight = $(window).outerHeight();
             bodyWidth = $(window).outerWidth();
             imgHeight = bodyHeight - 80;
@@ -158,7 +168,12 @@
         $clone.css({
             'padding-left':40, 
             'left':0
-        })
+        });
+
+        if($el.hasClass('video')){
+            $vid = $('<video src="' + $el.attr('data-videosrc') + '" autoplay poster="' + $el.attr('data-poster') + '"')
+            $clone.after($vid);
+        }
         
         
         // if has image
