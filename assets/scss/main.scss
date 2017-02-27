@@ -293,6 +293,7 @@ article.menu a {color: rgba(0,0,0,1); text-decoration: none;}
     position: absolute;
     left: -60px;
     top: 20px;
+    @include transition(opacity 0.3s ease-out);
 }
 .hamburger .line{
   width: 35px;
@@ -301,6 +302,9 @@ article.menu a {color: rgba(0,0,0,1); text-decoration: none;}
   display: block;
   margin: 8px auto;
   // @include transition(all 0.3s ease-out);
+}
+body.locked .hamburger {
+    opacity: 0;
 }
 
 .hamburger:hover{

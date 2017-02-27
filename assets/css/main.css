@@ -371,9 +371,13 @@ article.menu a {
   position: absolute;
   left: -60px;
   top: 20px;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
-/* line 297, ../scss/main.scss */
+/* line 298, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -383,16 +387,21 @@ article.menu a {
 }
 
 /* line 306, ../scss/main.scss */
+body.locked .hamburger {
+  opacity: 0;
+}
+
+/* line 310, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 325, ../scss/main.scss */
+/* line 329, ../scss/main.scss */
 #header.is-active .line:nth-child(2) {
   opacity: 0;
 }
 
-/* line 329, ../scss/main.scss */
+/* line 333, ../scss/main.scss */
 #header.is-active .line:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(45deg);
   -ms-transform: translateY(10px) rotate(45deg);
@@ -400,7 +409,7 @@ article.menu a {
   transform: translateY(10px) rotate(45deg);
 }
 
-/* line 336, ../scss/main.scss */
+/* line 340, ../scss/main.scss */
 #header.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-10px) rotate(-45deg);
   -ms-transform: translateY(-10px) rotate(-45deg);
@@ -409,7 +418,7 @@ article.menu a {
 }
 
 /* ------------------------------ slides */
-/* line 344, ../scss/main.scss */
+/* line 348, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -427,33 +436,33 @@ article.menu a {
   left: 100%;
 }
 
-/* line 357, ../scss/main.scss */
+/* line 361, ../scss/main.scss */
 .urlslide {
   width: calc(90% - 20px);
 }
 
-/* line 358, ../scss/main.scss */
+/* line 362, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 360, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 .slide.visible {
   left: 10%;
 }
 
-/* line 363, ../scss/main.scss */
+/* line 367, ../scss/main.scss */
 .urlslide.visible {
   left: 20px;
 }
 
-/* line 367, ../scss/main.scss */
+/* line 371, ../scss/main.scss */
 #header.is-slided nav {
   left: 0;
   opacity: .8;
 }
 
-/* line 371, ../scss/main.scss */
+/* line 375, ../scss/main.scss */
 #header.is-slided nav:after {
   content: "";
   display: block;
