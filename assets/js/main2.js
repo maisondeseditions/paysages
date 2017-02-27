@@ -287,6 +287,11 @@
         zoomout();
     })
 
+    $clonezone.on('click', function(e) {
+        e.stopPropagation();
+        zoomout();
+    })
+
 
     
 
