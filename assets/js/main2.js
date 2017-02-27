@@ -246,6 +246,15 @@
     });
 
     $(".hamburger").click(function(){
+        $('iframe').remove();
+        $header.toggleClass("is-active");
+        $header.removeClass("is-slided");
+        $slide.removeClass("visible");
+        $body.toggleClass('locked');
+    });
+
+    $("#overlay").click(function(){
+        $('iframe').remove();
         $header.toggleClass("is-active");
         $header.removeClass("is-slided");
         $slide.removeClass("visible");
