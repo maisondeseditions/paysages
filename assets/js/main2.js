@@ -187,7 +187,7 @@
 
             img.onload = function(){
               $img.attr('src', img_src);                   
-              console.log('loaded')
+              callRelated($el, $clone, $img)
             };
             img.src = img_src;
 
@@ -197,36 +197,36 @@
         
 
         // // call related
-
-        
-        
+   
+    }
+    function callRelated($el, $clone, $img) {
         var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
 
-        occupied_space = $clone.find('img')[0].outerWidth + 80 || 480;
-        available_space = $window.width() - 80 - occupied_space;
-        alert(available_space + ' / ' + occupied_space)
-        
-        $relzone.css({
-            'width':available_space,
-            'left': occupied_space
-        })
-        $clone.after($relzone);
+        var so = setTimeout(function () {
+            occupied_space = $img.width() + 80 || 480;
+            available_space = $window.width() - 80 - occupied_space;
+            //alert(available_space + ' / ' + occupied_space)
+            
+            $relzone.css({
+                'width':available_space,
+                'left': occupied_space
+            })
+            $clone.after($relzone);
 
-
-        for (var i = 0; i < related.length; i++) {
-            if(related[i] != ''){
-                var $rel = $( '#'+related[i] );
-                var $r = $rel.clone();
-                
-                $relzone.append($r);
-                
+            for (var i = 0; i < related.length; i++) {
+                if(related[i] != ''){
+                    var $rel = $( '#'+related[i] );
+                    var $r = $rel.clone();
+                    
+                    $relzone.append($r);
+                    
+                }
             }
-        }
+        }, 200)
 
         var s = setTimeout(function () {
             $relzone.addClass('visible');
         }, 1500)
-   
     }
 
     $home.on('click', function() {
