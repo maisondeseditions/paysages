@@ -387,7 +387,7 @@ article.menu a {
 }
 
 /* line 306, ../scss/main.scss */
-body.locked .hamburger {
+body.related .hamburger {
   opacity: 0;
 }
 
@@ -417,8 +417,19 @@ body.locked .hamburger {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* ------------------------------ slides */
+/* ------------------------------ cache */
 /* line 348, ../scss/main.scss */
+#cache {
+  position: fixed;
+  left: -200px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  top: -200px;
+}
+
+/* ------------------------------ slides */
+/* line 350, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -436,33 +447,33 @@ body.locked .hamburger {
   left: 100%;
 }
 
-/* line 361, ../scss/main.scss */
+/* line 363, ../scss/main.scss */
 .urlslide {
   width: calc(90% - 20px);
 }
 
-/* line 362, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 364, ../scss/main.scss */
+/* line 366, ../scss/main.scss */
 .slide.visible {
   left: 10%;
 }
 
-/* line 367, ../scss/main.scss */
+/* line 369, ../scss/main.scss */
 .urlslide.visible {
   left: 20px;
 }
 
-/* line 371, ../scss/main.scss */
+/* line 373, ../scss/main.scss */
 #header.is-slided nav {
   left: 0;
   opacity: .8;
 }
 
-/* line 375, ../scss/main.scss */
+/* line 377, ../scss/main.scss */
 #header.is-slided nav:after {
   content: "";
   display: block;

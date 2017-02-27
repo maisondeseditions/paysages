@@ -9,3 +9,4 @@ fields:
   title:
     label: Title
     type:  text
+  related: related

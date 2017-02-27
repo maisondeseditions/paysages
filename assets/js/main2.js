@@ -86,7 +86,7 @@
             $slide.height(bodyHeight);
             $('#mystyle').remove();
             var mystyle = '<style id="mystyle" type="text/css">';
-            mystyle += '#header { width:' + bodyWidth + 'px; left:' + bodyWidth + 'px; } ';
+            mystyle += '#header { width:' + bodyWidth + 'px; left:' + (bodyWidth + 20) + 'px; } ';
             mystyle += '#header.is-active { left:' + bodyWidth / 2 + 'px; } ';
             mystyle += '#header.is-slided { left:' + bodyWidth / 10 + 'px; }';
             mystyle += '</style>';
@@ -123,7 +123,7 @@
             complete: function(elements) { 
                 setTimeout(function(){
                     $el.addClass('out');
-                    $body.removeClass('locked');
+                    $body.removeClass('locked related');
                     $pep.removeClass('related');
                 }, 150)
             }
@@ -145,7 +145,7 @@
         
         $relzone.empty();
         $pep.addClass('related');
-        $body.addClass('locked');
+        $body.addClass('locked related');
         $article.removeClass('hidden');
         
         $clone = $el.clone();

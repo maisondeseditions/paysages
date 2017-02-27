@@ -303,7 +303,7 @@ article.menu a {color: rgba(0,0,0,1); text-decoration: none;}
   margin: 8px auto;
   // @include transition(all 0.3s ease-out);
 }
-body.locked .hamburger {
+body.related .hamburger {
     opacity: 0;
 }
 
@@ -344,6 +344,8 @@ body.locked .hamburger {
   transform: translateY(-10px) rotate(-45deg);
 }
 
+/* ------------------------------ cache */
+#cache { position: fixed; left:-200px; height: 1px; width: 1px; overflow: hidden; top: -200px}
 /* ------------------------------ slides */
 .slide {
     overflow-y: scroll;
