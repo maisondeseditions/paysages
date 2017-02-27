@@ -224,35 +224,35 @@
 
         
         
-        var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
+        // var related = $el.attr('data-related').replace(/ +(?= )/g,'').split(' ');
 
-        occupied_space = $clone.find('img').width() + 80 || 480;
-        available_space = $window.width() - 80 - occupied_space;
+        // occupied_space = $clone.find('img').width() + 80 || 480;
+        // available_space = $window.width() - 80 - occupied_space;
         
-        $relzone.css({
-            'width':available_space,
-            'left': occupied_space
-        })
-        $clone.after($relzone);
+        // $relzone.css({
+        //     'width':available_space,
+        //     'left': occupied_space
+        // })
+        // $clone.after($relzone);
 
 
-        for (var i = 0; i < related.length; i++) {
-            if(related[i] != ''){
-                var $rel = $( '#'+related[i] );
-                var $r = $rel.clone();
+        // for (var i = 0; i < related.length; i++) {
+        //     if(related[i] != ''){
+        //         var $rel = $( '#'+related[i] );
+        //         var $r = $rel.clone();
                 
-                $relzone.append($r);
-                $r.css({
-                    'position':'static',
-                    'margin':'0 0 40px 0',
-                    'padding':0
-                })
-            }
-        }
+        //         $relzone.append($r);
+        //         $r.css({
+        //             'position':'static',
+        //             'margin':'0 0 40px 0',
+        //             'padding':0
+        //         })
+        //     }
+        // }
 
-        var s = setTimeout(function () {
-            $relzone.addClass('visible');
-        }, 1500)
+        // var s = setTimeout(function () {
+        //     $relzone.addClass('visible');
+        // }, 1500)
 
 
         // $el.css({'padding-left':40});
