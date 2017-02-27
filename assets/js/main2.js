@@ -31,7 +31,7 @@
 
         $article.each(function(){
             var $this = $(this),
-                pdl = Math.floor( Math.random() * 150) + 20;
+                pdl = $this.hasClass('texte') ? 0 : Math.floor( Math.random() * 150) + 20;
             $this.attr('data-pdl', pdl);
             $this.css({
                 paddingTop: Math.floor( Math.random() * 550) + 50,
@@ -65,6 +65,7 @@
         bodyHeight = 0, 
         bodyWidth = 0, 
         calculateHeights = function(){
+            
             bodyHeight = $(window).outerHeight();
             bodyWidth = $(window).outerWidth();
             imgHeight = bodyHeight - 80;
