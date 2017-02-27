@@ -209,7 +209,8 @@
             
             $relzone.css({
                 'width':available_space,
-                'left': occupied_space
+                'left': occupied_space,
+                'right':80
             })
             $clone.after($relzone);
 
@@ -281,11 +282,17 @@
         zoomin(this);
     })
 
+    $relzone.on('click', 'article', function(e) {
+        e.stopPropagation();
+        zoomin(this);
+    })
+
     $clonezone.on('click', 'article', function(e) {
         e.stopPropagation();
 
         zoomout();
     })
+
 
     $clonezone.on('click', function(e) {
         e.stopPropagation();
