@@ -40,10 +40,13 @@
             var $this = $(this),
                 pdl = $this.hasClass('texte') ? 40 : Math.floor( Math.random() * 150) + 20;
             $this.attr('data-pdl', pdl);
+            var rot =  Math.random() > .8 ? 'rotate(' + parseInt(Math.floor( Math.random() * 6) - 3) + 'deg)' : 'none';
+            console.log(rot)
             $this.css({
                 paddingTop: Math.floor( Math.random() * 550) + 50,
                 marginBottom: Math.floor( Math.random() * 150) + 50,
-                paddingLeft: pdl
+                paddingLeft: pdl,
+                'transform':rot
             })
         })
         

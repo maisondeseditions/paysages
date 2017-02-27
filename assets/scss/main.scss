@@ -80,6 +80,11 @@ article.big {
     // width: 100%;
     padding-left: 0;
     position: absolute;
+    filter: none;
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
 }
 article.big img {
     width: auto;
