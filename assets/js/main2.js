@@ -22,22 +22,17 @@
     var ul = $pep[0];
     for (var i = ul.children.length; i >= 0; i--) {
         ul.appendChild(ul.children[Math.random() * i | 0]);      
-        if(i == 1)  {
+        if(i == 0)  {
             var $vid = $('.video').first();
             var $videoclone = $vid.clone();
-            $pep.find(" > :nth-child(1)").before( $videoclone );
             $pep.find(" > :nth-child(3)").before( $videoclone );
-            $pep.find(" > :nth-child(6)").before( $videoclone );
-            $pep.find(" > :nth-child(4)").before( $videoclone );
+            $article = $('.item');
         }
     }
 
     $pep.imagesLoaded( function() {
 
         imgLoaded = true;        
-
-        
-        
 
         $article.each(function(){
             var $this = $(this),
@@ -59,6 +54,9 @@
             $article.each(function(){
                 $(this).attr('data-left', parseInt( $(this).css('left') ))
             })  
+            setTimeout(function(){
+                $clonezone.css('height', $pep.css('height'));
+            }, 200)
         })
 
         $pep.packery()
@@ -110,6 +108,10 @@
         $article.removeClass('hidden');
         $relzone.empty();
         $relzone.removeClass('visible');
+
+        $('video').each(function(){
+             $(this)[0].pause();
+        })
         
         $el.velocity({
             // 'padding-left':$el.data('pdl'), 
@@ -170,10 +172,10 @@
             'left':0
         });
 
-        if($el.hasClass('video')){
+        if($clone.hasClass('video')){
 
-            $vid = $('<video src="' + $el.attr('data-videosrc') + '" controls  poster="' + $el.attr('data-poster') + '" ></video>');
-            $clone.append($vid);
+            $vid = $clone.find('video')[0];
+            $vid.play();
         }
         
         
@@ -284,6 +286,7 @@
 
     $clonezone.on('click', 'article', function(e) {
         e.stopPropagation();
+
         zoomout();
     })
 

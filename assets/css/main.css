@@ -115,19 +115,31 @@ img {
   -ms-filter: grayscale(0.7);
 }
 
-/* line 130, ../scss/main.scss */
+/* line 123, ../scss/main.scss */
+.video video {
+  display: none;
+}
+
+/* line 131, ../scss/main.scss */
 .video.clone span {
   display: none;
 }
 
 /* line 134, ../scss/main.scss */
-#clonezone {
-  z-index: 2;
-  display: -webkit-flex;
-  display: flex;
+.video.clone video {
+  display: block;
 }
 
 /* line 138, ../scss/main.scss */
+#clonezone {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 68015px;
+}
+
+/* line 145, ../scss/main.scss */
 #relzone {
   position: fixed;
   top: 0;
@@ -143,25 +155,25 @@ img {
   transition: opacity 250ms ease-out;
 }
 
-/* line 149, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
 #relzone.visible {
   opacity: 1;
 }
 
-/* line 152, ../scss/main.scss */
+/* line 159, ../scss/main.scss */
 #relzone article {
   width: 100%;
   margin-bottom: 40px;
 }
 
-/* line 156, ../scss/main.scss */
+/* line 163, ../scss/main.scss */
 #relzone article img {
   max-width: 100%;
   height: auto;
 }
 
 /* ------------------------------ home */
-/* line 163, ../scss/main.scss */
+/* line 170, ../scss/main.scss */
 #home {
   background: #eee;
   display: -webkit-flex;
@@ -184,35 +196,35 @@ img {
   z-index: 900;
 }
 
-/* line 179, ../scss/main.scss */
+/* line 186, ../scss/main.scss */
 #home.invisible {
   opacity: 0;
 }
 
-/* line 182, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
 h1, h2 {
   font-size: 1em;
   font-weight: normal;
 }
 
-/* line 186, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 h1 {
   font-weight: bold;
 }
 
-/* line 187, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 #home p {
   text-align: center;
   font-size: .75em;
 }
 
-/* line 192, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .intro {
   position: relative;
   top: -1em;
 }
 
-/* line 196, ../scss/main.scss */
+/* line 203, ../scss/main.scss */
 .loading, .loaded {
   opacity: 1;
   top: 0px;
@@ -224,7 +236,7 @@ h1 {
   width: 100%;
 }
 
-/* line 203, ../scss/main.scss */
+/* line 210, ../scss/main.scss */
 .loaded {
   opacity: 0;
   top: 20px;
@@ -235,20 +247,20 @@ h1 {
   transition: all 250ms ease-out 150ms;
 }
 
-/* line 208, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
 .loading.invisible {
   opacity: 0;
   top: -5px;
 }
 
-/* line 212, ../scss/main.scss */
+/* line 219, ../scss/main.scss */
 .loaded.visible {
   opacity: 1;
   top: 0px;
 }
 
 /* ------------------------------ nav */
-/* line 221, ../scss/main.scss */
+/* line 228, ../scss/main.scss */
 #header {
   position: fixed;
   z-index: 850;
@@ -262,22 +274,22 @@ h1 {
   transition: all 0.3s ease-out;
 }
 
-/* line 230, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 #header {
   width: 100%;
 }
 
-/* line 231, ../scss/main.scss */
+/* line 238, ../scss/main.scss */
 #header.is-active {
   left: 50%;
 }
 
-/* line 232, ../scss/main.scss */
+/* line 239, ../scss/main.scss */
 #header.is-slided {
   left: 10%;
 }
 
-/* line 234, ../scss/main.scss */
+/* line 241, ../scss/main.scss */
 nav {
   position: absolute;
   z-index: 650;
@@ -289,54 +301,54 @@ nav {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 247, ../scss/main.scss */
+/* line 254, ../scss/main.scss */
 .menu,
 .slide {
   padding: 30px 40px;
 }
 
-/* line 251, ../scss/main.scss */
+/* line 258, ../scss/main.scss */
 .urlslide {
   padding: 0;
 }
 
-/* line 254, ../scss/main.scss */
+/* line 261, ../scss/main.scss */
 .slide iframe {
   height: 100%;
   width: 100%;
 }
 
-/* line 257, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 262, ../scss/main.scss */
+/* line 269, ../scss/main.scss */
 li, p, h1, h2 {
   margin: .65em 0;
 }
 
-/* line 265, ../scss/main.scss */
+/* line 272, ../scss/main.scss */
 .menu a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
-/* line 266, ../scss/main.scss */
+/* line 273, ../scss/main.scss */
 article.menu a {
   color: black;
   text-decoration: none;
 }
 
-/* line 267, ../scss/main.scss */
+/* line 274, ../scss/main.scss */
 .menu h1,
 .menu h2 {
   margin: 0;
 }
 
-/* line 269, ../scss/main.scss */
+/* line 276, ../scss/main.scss */
 .hamburger {
   z-index: 650;
   position: absolute;
@@ -344,7 +356,7 @@ article.menu a {
   top: 20px;
 }
 
-/* line 275, ../scss/main.scss */
+/* line 282, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -353,17 +365,17 @@ article.menu a {
   margin: 8px auto;
 }
 
-/* line 284, ../scss/main.scss */
+/* line 291, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 303, ../scss/main.scss */
+/* line 310, ../scss/main.scss */
 #header.is-active .line:nth-child(2) {
   opacity: 0;
 }
 
-/* line 307, ../scss/main.scss */
+/* line 314, ../scss/main.scss */
 #header.is-active .line:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(45deg);
   -ms-transform: translateY(10px) rotate(45deg);
@@ -371,7 +383,7 @@ article.menu a {
   transform: translateY(10px) rotate(45deg);
 }
 
-/* line 314, ../scss/main.scss */
+/* line 321, ../scss/main.scss */
 #header.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-10px) rotate(-45deg);
   -ms-transform: translateY(-10px) rotate(-45deg);
@@ -380,7 +392,7 @@ article.menu a {
 }
 
 /* ------------------------------ slides */
-/* line 322, ../scss/main.scss */
+/* line 329, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -398,33 +410,33 @@ article.menu a {
   left: 100%;
 }
 
-/* line 335, ../scss/main.scss */
+/* line 342, ../scss/main.scss */
 .urlslide {
   width: calc(90% - 20px);
 }
 
-/* line 336, ../scss/main.scss */
+/* line 343, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 338, ../scss/main.scss */
+/* line 345, ../scss/main.scss */
 .slide.visible {
   left: 10%;
 }
 
-/* line 341, ../scss/main.scss */
+/* line 348, ../scss/main.scss */
 .urlslide.visible {
   left: 20px;
 }
 
-/* line 345, ../scss/main.scss */
+/* line 352, ../scss/main.scss */
 #header.is-slided nav {
   left: 0;
   opacity: .8;
 }
 
-/* line 349, ../scss/main.scss */
+/* line 356, ../scss/main.scss */
 #header.is-slided nav:after {
   content: "";
   display: block;

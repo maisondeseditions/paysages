@@ -120,7 +120,8 @@ img {
     -ms-filter: grayscale(.7);
 }
 
-.video {
+.video video {
+    display: none;
     // filter: grayscale(.7);
     // -webkit-filter: grayscale(.7);
     // -moz-filter: grayscale(.7);
@@ -130,10 +131,16 @@ img {
 .video.clone span {
     display: none;
 }
+.video.clone video {
+    display: block;
+}
 
 #clonezone {
-    z-index: 2;
-    @include display-flex;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 68015px;
 }
 #relzone{
     position: fixed;

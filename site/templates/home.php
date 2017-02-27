@@ -1,10 +1,7 @@
 <?php snippet('header') ?>
     <div class="pep" id="pep">
 
-      <!-- <article class="menu">
-        <?php snippet('menu') ?>
-      </article> -->
-
+      
     <?php 
       $textes = page('paysages/textes')->children()->visible();
       foreach ($textes as $p): ?>
@@ -26,6 +23,7 @@
         >
             <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' />
             </span>
+            <video src="<?php echo($p->videos()->first()->url()) ?>" poster="<?= $thumb->url() ?>" ></video>
       </article>
     <?php endforeach ?>
 
