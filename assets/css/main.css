@@ -21,21 +21,6 @@ body {
   background: #eee;
 }
 
-/* line 23, ../scss/main.scss */
-body.dragscroll {
-  cursor: move;
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
-
-/* line 29, ../scss/main.scss */
-body.dragscroll:active {
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
-}
-
 /* line 34, ../scss/main.scss */
 body.locked {
   overflow: hidden;
@@ -76,7 +61,6 @@ body.locked {
 /* line 66, ../scss/main.scss */
 article {
   position: absolute;
-  cursor: move;
 }
 
 /* line 71, ../scss/main.scss */
@@ -336,12 +320,18 @@ li, p, h1, h2 {
 }
 
 /* line 256, ../scss/main.scss */
+article.menu a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 257, ../scss/main.scss */
 .menu h1,
 .menu h2 {
   margin: 0;
 }
 
-/* line 258, ../scss/main.scss */
+/* line 259, ../scss/main.scss */
 .hamburger {
   z-index: 650;
   position: absolute;
@@ -349,7 +339,7 @@ li, p, h1, h2 {
   top: 20px;
 }
 
-/* line 264, ../scss/main.scss */
+/* line 265, ../scss/main.scss */
 .hamburger .line {
   width: 35px;
   height: 2px;
@@ -358,17 +348,17 @@ li, p, h1, h2 {
   margin: 8px auto;
 }
 
-/* line 273, ../scss/main.scss */
+/* line 274, ../scss/main.scss */
 .hamburger:hover {
   cursor: pointer;
 }
 
-/* line 292, ../scss/main.scss */
+/* line 293, ../scss/main.scss */
 #header.is-active .line:nth-child(2) {
   opacity: 0;
 }
 
-/* line 296, ../scss/main.scss */
+/* line 297, ../scss/main.scss */
 #header.is-active .line:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(45deg);
   -ms-transform: translateY(10px) rotate(45deg);
@@ -376,7 +366,7 @@ li, p, h1, h2 {
   transform: translateY(10px) rotate(45deg);
 }
 
-/* line 303, ../scss/main.scss */
+/* line 304, ../scss/main.scss */
 #header.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-10px) rotate(-45deg);
   -ms-transform: translateY(-10px) rotate(-45deg);
@@ -385,7 +375,7 @@ li, p, h1, h2 {
 }
 
 /* ------------------------------ slides */
-/* line 311, ../scss/main.scss */
+/* line 312, ../scss/main.scss */
 .slide {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -403,33 +393,33 @@ li, p, h1, h2 {
   left: 100%;
 }
 
-/* line 324, ../scss/main.scss */
+/* line 325, ../scss/main.scss */
 .urlslide {
   width: calc(90% - 20px);
 }
 
-/* line 325, ../scss/main.scss */
+/* line 326, ../scss/main.scss */
 .content {
   max-width: 600px;
 }
 
-/* line 327, ../scss/main.scss */
+/* line 328, ../scss/main.scss */
 .slide.visible {
   left: 10%;
 }
 
-/* line 330, ../scss/main.scss */
+/* line 331, ../scss/main.scss */
 .urlslide.visible {
   left: 20px;
 }
 
-/* line 334, ../scss/main.scss */
+/* line 335, ../scss/main.scss */
 #header.is-slided nav {
   left: 0;
   opacity: .8;
 }
 
-/* line 338, ../scss/main.scss */
+/* line 339, ../scss/main.scss */
 #header.is-slided nav:after {
   content: "";
   display: block;

@@ -20,17 +20,17 @@ body {
     background: #eee;
 }
 
-body.dragscroll{
-    cursor: move;
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-}
-body.dragscroll:active { 
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-}
+// body.dragscroll{
+//     cursor: move;
+//     cursor: grab;
+//     cursor: -moz-grab;
+//     cursor: -webkit-grab;
+// }
+// body.dragscroll:active { 
+//     cursor: grabbing;
+//     cursor: -moz-grabbing;
+//     cursor: -webkit-grabbing;
+// }
 body.locked {
     overflow: hidden;
 }
@@ -65,7 +65,7 @@ body.locked {
 /* ------------------------------ articles */
 article { 
     position: absolute;    
-    cursor: move;
+    // cursor: move;
     //@include transition(all 250ms ease-out);
 }
 article.hidden{
@@ -253,6 +253,7 @@ li, p, h1, h2 {
     margin: .65em 0;
 }
 .menu a {color: rgba(255,255,255,.8); text-decoration: none;}
+article.menu a {color: rgba(0,0,0,1); text-decoration: none;}
 .menu h1, 
 .menu h2 { margin: 0; }
 .hamburger {

@@ -34,23 +34,7 @@
         <header id="header">
         <nav id="nav">
             <div class="menu">
-                <h2>Clémentine Fort</h2>
-                <h1>Paysages domestiques</h1>
-                <p>— </p>
-                
-                <ul>
-                    <?php
-                    $pages = $site->children()->not('paysages')->visible();
-                    foreach ($pages as $page) :?>
-                    <?php if ($page->externalurl() != ''): ?>
-                    <li><a class="showurl" data-target="#<?= $page->slug() ?>" href="<?= $page->externalurl() ?>"><?= $page->title()->html() ?></a></li>                    
-                    <?php else: ?>
-                    <li><a class="slideto" href="#<?= $page->slug() ?>"><?= $page->title()->html() ?></a></li>
-                    <?php endif ?>
-                    
-                    <?php endforeach ?>
-                </ul>
-                
+                <?php snippet('menu') ?>
             </div>
         </nav>
         <div class="hamburger" id="hamburger-2">
@@ -58,7 +42,9 @@
             <span class="line"></span>
             <span class="line"></span>
         </div>
-        <?php foreach ($pages as $page) :?>
+        <?php 
+            $pages = $site->children()->not('paysages')->visible();
+            foreach ($pages as $page) :?>
         <?php if ($page->externalurl() == ''): ?>
         <div class="slide" id="<?= $page->slug() ?>">
             <div class="content">
@@ -79,13 +65,13 @@
                 <h2>Clémentine Fort</h2>
                 <h1>Paysages domestiques</h1>
                 <p>
-                — </p>
+                —<br><br> </p>
                 <div class="intro">
                     <p class="loading">
                         Chargement en cours
                     </p>
                     <p class="loaded">
-                        Cliquez pour entrer, <br>glissez pour explorer
+                        Cliquez pour entrer. <br>Glissez pour explorer.
                     </p>
                 </div>
             </div>

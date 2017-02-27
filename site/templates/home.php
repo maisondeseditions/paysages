@@ -1,10 +1,14 @@
 <?php snippet('header') ?>
     <div class="pep" id="pep">
 
+      <!-- <article class="menu">
+        <?php snippet('menu') ?>
+      </article> -->
+
     <?php 
       $textes = page('paysages/textes')->children()->visible()->limit(300);
       foreach ($textes as $p): ?>
-      <article class="texte <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
+      <article class="item texte <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
         >
       <?php echo $p->text() ?>
@@ -15,7 +19,7 @@
     <?php 
       $pageimages = page('paysages/images')->children()->visible()->limit(300);
       foreach ($pageimages as $p): ?>
-      <article class="image <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
+      <article class="item image <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
         >
       <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
@@ -28,7 +32,7 @@
     <?php 
       $docs = page('paysages/documents')->children()->visible()->limit(300);
       foreach ($docs as $p): ?>
-      <article class="document" id="<?php echo $p->slug() ?>" 
+      <article class="item document" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure() as $r): ?><?= $r ?> <?php endforeach ?>"
         >
       <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
