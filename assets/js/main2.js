@@ -190,7 +190,16 @@
         // if has image
         var $img = $clone.find('img').first();
         if($img.length){
-            $img.attr('src', $img.data('source'));                   
+            var img = new Image(),
+                img_src = $img.data('source');
+
+            img.onload = function(){
+              $img.attr('src', img_src);                   
+              console.log('loaded')
+            };
+            img.src = img_src;
+
+            
         }
         
         // // reset other
