@@ -15,15 +15,15 @@
     <?php 
       $pagevideo = page('paysages/video')->children()->visible();
       foreach ($pagevideo as $p): ?>
-      <?php $thumb = $p->images()->sortBy('sort', 'asc')->first()->resize(600, 600); ?>
+      <?php $image = $p->images()->sortBy('sort', 'asc')->first(); ?>
       <article class="item video <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure()->limit(3) as $r): ?><?= $r ?> <?php endforeach ?>"
         data-videosrc="<?php echo($p->videos()->first()->url()) ?>"
-        data-poster="<?= $thumb->url() ?>"
+        data-poster="<?= $image->url() ?>"
         >
-            <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' />
+            <span><img src="<?= $image->url() ?>" height="<?= $image->height() ?>"/>
             </span>
-            <video src="<?php echo($p->videos()->first()->url()) ?>" poster="<?= $thumb->url() ?>" ></video>
+            <video src="<?php echo($p->videos()->first()->url()) ?>" poster="<?= $image->url() ?>" ></video>
       </article>
     <?php endforeach ?>
 
@@ -34,10 +34,10 @@
       <article class="item image <?php e($p->related() != '', 'has_related') ?>" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure()->limit(3) as $r): ?><?= $r ?> <?php endforeach ?>"
         >
-      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
-            <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' />
-            </span>
+      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): ?>
+            <span><img src="<?= $image->url() ?>" height="<?= $image->height() ?>" /></span>
       <?php endif ?>
+      
       </article>
     <?php endforeach ?>
 
@@ -47,14 +47,12 @@
       <article class="item document" id="<?php echo $p->slug() ?>" 
         data-related="<?php foreach ($p->related()->toStructure()->limit(3) as $r): ?><?= $r ?> <?php endforeach ?>"
         >
-      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): $thumb = $image->resize(400, 400); ?>
-            <span><img src="<?= $thumb->url() ?>" height="<?= $thumb->height() ?>" data-source='<?= $p->images()->sortBy('sort', 'asc')->first()->url() ?>'  data-thumb='<?= $thumb->url() ?>' /></span>
+      <?php if($image = $p->images()->sortBy('sort', 'asc')->first()): ?>
+            <span><img src="<?= $image->url() ?>" height="<?= $image->height() ?>" /></span>
       <?php endif ?>
       
       </article>
     <?php endforeach ?>
-
-      <?php snippet('cache') ?>
     
 
     </div>

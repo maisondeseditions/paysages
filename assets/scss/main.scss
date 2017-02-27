@@ -97,6 +97,11 @@ img {
     opacity: .8;
 
 }
+.pep article img {
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+}
 // .has_related:after{
 //     content:'r';
 //     position: absolute;

@@ -153,7 +153,7 @@
         $clone.addClass('clone');
         $clonezone.append($clone);
         
-        $el.addClass('hidden');
+        //$el.addClass('hidden');
         
         var top = parseInt($clone.css('top') ) + parseInt($clone.css('padding-top') );
         $clone.css({
@@ -181,18 +181,19 @@
         
         // if has image
         var $img = $clone.find('img').first();
-        if($img.length){
-            var img = new Image(),
-                img_src = $img.data('source');
+        // if($img.length){
+        //     var img = new Image(),
+        //         img_src = $img.data('source');
 
-            img.onload = function(){
-              $img.attr('src', img_src);                   
-              callRelated($el, $clone, $img)
-            };
-            img.src = img_src;
+        //     img.onload = function(){
+        //       $img.attr('src', img_src);                   
+              
+        //     };
+        //     img.src = img_src;
 
             
-        }
+        // }
+        callRelated($el, $clone, $img)
     
         
 
